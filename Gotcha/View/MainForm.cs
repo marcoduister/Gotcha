@@ -24,6 +24,7 @@ namespace Gotcha.View
             Game_Overview uc = new Game_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);
+
         }
     }
 }

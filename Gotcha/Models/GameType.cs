@@ -12,7 +12,6 @@ namespace Gotcha.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public Guid Maker_Id { get; set; }
-        public Guid Game_Id { get; set; }
         public ICollection<Game> Games { get; set; }
         public User User { get; set; }
     }

@@ -172,6 +172,10 @@
     <Compile Include="Migrations\20210602115631_initialCreate.designer.cs">
       <DependentUpon>20210602115631_initialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20210602173336_gametype.cs" />
+    <Compile Include="Migrations\20210602173336_gametype.designer.cs">
+      <DependentUpon>20210602173336_gametype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Gotcha_DBcontextModelSnapshot.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameType.cs" />
@@ -202,6 +206,12 @@
     </Compile>
     <Compile Include="View\UserControls\GameTypes\Gametype_Overview.Designer.cs">
       <DependentUpon>Gametype_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Game\Game_add.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Game\Game_add.Designer.cs">
+      <DependentUpon>Game_add.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Game\Game_Overview.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +248,9 @@
     </Compile>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Game\Game_add.resx">
+      <DependentUpon>Game_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_Overview.resx">
       <DependentUpon>Game_Overview.cs</DependentUpon>
