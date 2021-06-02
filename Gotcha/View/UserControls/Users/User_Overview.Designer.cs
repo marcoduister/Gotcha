@@ -29,10 +29,59 @@ namespace Gotcha.View.UserControls.Users
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AddUser = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F);
+            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "User overview";
+            // 
+            // AddUser
+            // 
+            this.AddUser.Location = new System.Drawing.Point(17, 72);
+            this.AddUser.Name = "AddUser";
+            this.AddUser.Size = new System.Drawing.Size(77, 28);
+            this.AddUser.TabIndex = 1;
+            this.AddUser.Text = "Add user";
+            this.AddUser.UseVisualStyleBackColor = true;
+            this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(644, 320);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // User_Overview
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.AddUser);
+            this.Controls.Add(this.label1);
+            this.Name = "User_Overview";
+            this.Size = new System.Drawing.Size(682, 443);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button AddUser;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
