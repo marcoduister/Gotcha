@@ -16,5 +16,12 @@ namespace Gotcha.View.UserControls.Users
         {
             InitializeComponent();
         }
+
+        private void AddUser_Click(object sender, EventArgs e)
+        {
+            User_Add uc = new User_Add();
+            uc.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(uc);
+        }
     }
 }
