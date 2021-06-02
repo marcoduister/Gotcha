@@ -35,6 +35,9 @@ namespace Gotcha.View
             this.rulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uitloggenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +58,10 @@ namespace Gotcha.View
             this.gameToolStripMenuItem,
             this.rulesToolStripMenuItem,
             this.wordenToolStripMenuItem,
-            this.gameTypeToolStripMenuItem});
+            this.gameTypeToolStripMenuItem,
+            this.usersToolStripMenuItem,
+            this.accountToolStripMenuItem,
+            this.uitloggenToolStripMenuItem});
             this.Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
@@ -68,6 +74,7 @@ namespace Gotcha.View
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
             this.gameToolStripMenuItem.Size = new System.Drawing.Size(166, 45);
             this.gameToolStripMenuItem.Text = "Game";
+            this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
             // 
             // rulesToolStripMenuItem
             // 
@@ -86,6 +93,25 @@ namespace Gotcha.View
             this.gameTypeToolStripMenuItem.Name = "gameTypeToolStripMenuItem";
             this.gameTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 45);
             this.gameTypeToolStripMenuItem.Text = "GameType";
+            // 
+            // usersToolStripMenuItem
+            // 
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(166, 45);
+            this.usersToolStripMenuItem.Text = "Users";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 220, 0, 0);
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(166, 45);
+            this.accountToolStripMenuItem.Text = "Account";
+            // 
+            // uitloggenToolStripMenuItem
+            // 
+            this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(166, 45);
+            this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             // 
             // MainForm
             // 
@@ -111,5 +137,8 @@ namespace Gotcha.View
         private System.Windows.Forms.ToolStripMenuItem rulesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wordenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gameTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uitloggenToolStripMenuItem;
     }
 }

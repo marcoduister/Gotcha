@@ -18,11 +18,12 @@ namespace Gotcha.View
             InitializeComponent();
         }
 
-        private void gamesToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void gameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Game_Overview uc = new Game_Overview();
             uc.Dock = DockStyle.Fill;
-            this.Controls.Add(uc);
+            panel_Main.Controls.Add(uc);
         }
     }
 }

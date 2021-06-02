@@ -197,11 +197,35 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\GameTypes\Gametype_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\GameTypes\Gametype_Overview.Designer.cs">
+      <DependentUpon>Gametype_Overview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Game\Game_Overview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UserControls\Game\Game_Overview.Designer.cs">
       <DependentUpon>Game_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rules_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rules_Overview.Designer.cs">
+      <DependentUpon>Rules_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Users\User_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Users\User_Overview.Designer.cs">
+      <DependentUpon>User_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Worden_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Worden_Overview.Designer.cs">
+      <DependentUpon>Worden_Overview.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -214,6 +238,9 @@
     </Compile>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Game\Game_Overview.resx">
+      <DependentUpon>Game_Overview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
