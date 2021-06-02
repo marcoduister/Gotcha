@@ -30,7 +30,7 @@ namespace Gotcha.Models
         public Guid WordSet_Id { get; set; }
         public WordSet WordSet { get; set; }
 
-        public List<PlayerSet> PlayerSets { get; set; }
+        public List<Contract> Contracts { get; set; }
 
         #endregion
 

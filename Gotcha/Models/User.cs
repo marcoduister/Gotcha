@@ -18,7 +18,7 @@ namespace Gotcha.Models
         public DateTime Birthdate { get; set; }
         public enum Rol { Player,Gamemaster,Admin }
         public bool UserActive { get; set; }
-        //public Image ProfileImage { get; set; }
+        public byte[] ProfileImage { get; set; }
         public Guid Maker_Id { get; set; }
         public User user { get; set; }
         public List<Word> Word { get; set; }

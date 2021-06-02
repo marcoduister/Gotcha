@@ -12,6 +12,7 @@ namespace Gotcha.Models
         public string Content { get; set; }
         public Guid Maker_Id { get; set; }
         public User User { get; set; }
+        public ICollection<WordLink> WordLinks { get; set; }
 
     }
 }

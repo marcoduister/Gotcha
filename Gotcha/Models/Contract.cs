@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gotcha.Models
 {
-    class PlayerSet
+    class Contract
     {
         public Guid Id { get; set; }
         public Guid Game_Id { get; set; }
@@ -15,7 +15,5 @@ namespace Gotcha.Models
         public DateTime EliminatedTime { get; set; }
         public int Eliminations { get; set; }
         public Game Game { get; set; }
-
-
     }
 }

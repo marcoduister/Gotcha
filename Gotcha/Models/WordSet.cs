@@ -10,7 +10,7 @@ namespace Gotcha.Models
     {
         public Guid Id { get; set; }
         public Guid Maker_Id { get; set; }
-        public ICollection<Word> Words { get; set; }
+        public ICollection<WordLink> WordLinks { get; set; }
         public ICollection<Game> Games { get; set; }
         public User User { get; set; }
     }

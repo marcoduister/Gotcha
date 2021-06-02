@@ -167,19 +167,21 @@
     <Compile Include="BUS\UserController.cs" />
     <Compile Include="BUS\WordController.cs" />
     <Compile Include="DAL\Gotcha_DBcontext.cs" />
-    <Compile Include="Migrations\20210527162725_initial.cs" />
-    <Compile Include="Migrations\20210527162725_initial.designer.cs">
-      <DependentUpon>20210527162725_initial.cs</DependentUpon>
+    <Compile Include="Migrations\20210602115631_initialCreate.cs" />
+    <Compile Include="Migrations\20210602115631_initialCreate.designer.cs">
+      <DependentUpon>20210602115631_initialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Gotcha_DBcontextModelSnapshot.cs" />
     <Compile Include="Models\Baseclass.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameType.cs" />
-    <Compile Include="Models\PlayerSet.cs" />
+    <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Rule.cs" />
+    <Compile Include="Models\RuleLink.cs" />
     <Compile Include="Models\RuleSet.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Word.cs" />
+    <Compile Include="Models\WordLink.cs" />
     <Compile Include="Models\WordSet.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
