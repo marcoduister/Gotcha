@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Gotcha.Models.Contract">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JCADAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAACAEAAA=</HashCode>
+      <FileName>Models\Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.Game">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAABAAAAAAAIAgAUIIAAAAAQAFIgIAAAgCEA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.GameType">
+    <Position X="3.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="13.25" Y="3.2" />
+        <Point X="13.25" Y="1.612" />
+        <Point X="12.208" Y="1.612" Type="JumpStart" />
+        <Point X="12.042" Y="1.612" Type="JumpEnd" />
+        <Point X="11.2" Y="1.612" />
+        <Point X="11.2" Y="4.929" />
+        <Point X="10.083" Y="4.929" Type="JumpStart" />
+        <Point X="9.917" Y="4.929" Type="JumpEnd" />
+        <Point X="7.95" Y="4.929" />
+        <Point X="7.95" Y="2.573" />
+        <Point X="7.083" Y="2.573" Type="JumpStart" />
+        <Point X="6.917" Y="2.573" Type="JumpEnd" />
+        <Point X="4.5" Y="2.573" />
+        <Point X="4.5" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>QAADAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\GameType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.Rule">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAEAAAEA=</HashCode>
+      <FileName>Models\Rule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.RuleRuleSet">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\RuleRuleSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.RuleSet">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAADAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAEA=</HashCode>
+      <FileName>Models\RuleSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.User">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgECAEAAACAAAEACAAAAAAUAAAAAEgACAAAIAAAAAAg=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.Word">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="System.Object" ManuallyRouted="true">
+      <Path>
+        <Point X="13.25" Y="0.75" />
+        <Point X="13.25" Y="0.375" />
+        <Point X="10" Y="0.375" />
+        <Point X="10" Y="5.448" />
+        <Point X="2.592" Y="5.448" />
+        <Point X="2.592" Y="2.573" />
+        <Point X="3" Y="2.573" />
+        <Point X="3" Y="2.373" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAgAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Word.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.WordWordset">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\WordWordset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gotcha.Models.WordSet">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAADAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\WordSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="12.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

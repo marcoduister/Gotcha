@@ -8,11 +8,15 @@ namespace Gotcha.Models
 {
     class Word
     {
+
+        //Atributte/property
         public Guid Id { get; set; }
         public string Content { get; set; }
         public Guid Maker_Id { get; set; }
-        public User User { get; set; }
-        public ICollection<WordLink> WordLinks { get; set; }
 
+        //Relations
+        public User User { get; set; }
+        public List<WordWordset> WordWordset { get; set; }
+       
     }
 }

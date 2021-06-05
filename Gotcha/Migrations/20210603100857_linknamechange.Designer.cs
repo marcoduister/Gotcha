@@ -4,14 +4,16 @@ using Gotcha.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Gotcha.Migrations
 {
     [DbContext(typeof(Gotcha_DBcontext))]
-    partial class Gotcha_DBcontextModelSnapshot : ModelSnapshot
+    [Migration("20210603100857_linknamechange")]
+    partial class linknamechange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +27,7 @@ namespace Gotcha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("EliminatedTime")
+                    b.Property<DateTime>("EliminatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Eliminations")
@@ -61,7 +63,7 @@ namespace Gotcha.Migrations
                     b.Property<Guid?>("BestKill")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("EindTime")
+                    b.Property<DateTime>("EindTime")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("GameType_Id")
@@ -85,7 +87,7 @@ namespace Gotcha.Migrations
                     b.Property<Guid?>("RuleSet_Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("StartTime")
+                    b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("WordSet_Id")
@@ -244,9 +246,6 @@ namespace Gotcha.Migrations
 
                     b.Property<Guid>("Maker_Id")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

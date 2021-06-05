@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Gotcha.Models
 {
-    class RuleLink
+    class RuleRuleSet
     {
+        //Atributte/property
         public Guid Rule_Id { get; set; }
-        public Rule Rule { get; set; }
-
         public Guid RuleSet_Id { get; set; }
+
+        //Relations
+        public Rule Rule { get; set; }
         public RuleSet RuleSet { get; set; }
     }
 }

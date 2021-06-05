@@ -168,24 +168,45 @@
     <Compile Include="BUS\UserController.cs" />
     <Compile Include="BUS\WordController.cs" />
     <Compile Include="DAL\Gotcha_DBcontext.cs" />
-    <Compile Include="Migrations\20210602115631_initialCreate.cs" />
-    <Compile Include="Migrations\20210602115631_initialCreate.designer.cs">
-      <DependentUpon>20210602115631_initialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20210602212515_initial.cs" />
+    <Compile Include="Migrations\20210602212515_initial.designer.cs">
+      <DependentUpon>20210602212515_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20210602173336_gametype.cs" />
-    <Compile Include="Migrations\20210602173336_gametype.designer.cs">
-      <DependentUpon>20210602173336_gametype.cs</DependentUpon>
+    <Compile Include="Migrations\20210602224130_Archived.cs" />
+    <Compile Include="Migrations\20210602224130_Archived.designer.cs">
+      <DependentUpon>20210602224130_Archived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210602231103_contractUserId.cs" />
+    <Compile Include="Migrations\20210602231103_contractUserId.designer.cs">
+      <DependentUpon>20210602231103_contractUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210603100542_addLinktable.cs" />
+    <Compile Include="Migrations\20210603100542_addLinktable.designer.cs">
+      <DependentUpon>20210603100542_addLinktable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210603100857_linknamechange.cs" />
+    <Compile Include="Migrations\20210603100857_linknamechange.designer.cs">
+      <DependentUpon>20210603100857_linknamechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210603212938_gameupdate.cs" />
+    <Compile Include="Migrations\20210603212938_gameupdate.designer.cs">
+      <DependentUpon>20210603212938_gameupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20210604215732_addNameToword.cs" />
+    <Compile Include="Migrations\20210604215732_addNameToword.designer.cs">
+      <DependentUpon>20210604215732_addNameToword.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Gotcha_DBcontextModelSnapshot.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\GameType.cs" />
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Rule.cs" />
-    <Compile Include="Models\RuleLink.cs" />
+    <Compile Include="Models\RuleRuleSet.cs" />
     <Compile Include="Models\RuleSet.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Word.cs" />
-    <Compile Include="Models\WordLink.cs" />
+    <Compile Include="Models\WordWordset.cs" />
     <Compile Include="Models\WordSet.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
@@ -206,6 +227,12 @@
     </Compile>
     <Compile Include="View\UserControls\GameTypes\Gametype_Overview.Designer.cs">
       <DependentUpon>Gametype_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Game\Game_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Game\Game_Edit.Designer.cs">
+      <DependentUpon>Game_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Game\Game_add.cs">
       <SubType>UserControl</SubType>
@@ -255,6 +282,9 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Game\Game_Edit.resx">
+      <DependentUpon>Game_Edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_add.resx">
       <DependentUpon>Game_add.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +297,7 @@
     <EmbeddedResource Include="View\UserControls\Users\User_Overview.resx">
       <DependentUpon>User_Overview.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

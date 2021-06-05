@@ -75,6 +75,7 @@ namespace Gotcha.View.UserControls.Game
             this.dataGridView_Games.RowTemplate.Height = 24;
             this.dataGridView_Games.Size = new System.Drawing.Size(803, 361);
             this.dataGridView_Games.TabIndex = 2;
+            this.dataGridView_Games.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Games_CellContentClick);
             // 
             // Id
             // 

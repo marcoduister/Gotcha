@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gotcha.Migrations
 {
     [DbContext(typeof(Gotcha_DBcontext))]
-    [Migration("20210602115631_initialCreate")]
-    partial class initialCreate
+    [Migration("20210604215732_addNameToword")]
+    partial class addNameToword
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace Gotcha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("EliminatedTime")
+                    b.Property<DateTime?>("EliminatedTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Eliminations")
@@ -39,12 +39,14 @@ namespace Gotcha.Migrations
                     b.Property<Guid>("User_Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Word_Id")
+                    b.Property<Guid?>("Word_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Game_Id");
+
+                    b.HasIndex("User_Id");
 
                     b.ToTable("Contracts");
                 });
@@ -55,10 +57,16 @@ namespace Gotcha.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("EindTime")
+                    b.Property<bool>("Archived")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("BestKill")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("EindTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("GameType_Id")
+                    b.Property<Guid?>("GameType_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Location")
@@ -67,22 +75,22 @@ namespace Gotcha.Migrations
                     b.Property<Guid>("Maker_Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("MaxPlayers")
+                    b.Property<int?>("MaxPlayers")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RandomWiner")
+                    b.Property<Guid?>("RandomWiner")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("RuleSet_Id")
+                    b.Property<Guid?>("RuleSet_Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("StartTime")
+                    b.Property<DateTime?>("StartTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("WordSet_Id")
+                    b.Property<Guid?>("WordSet_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -106,9 +114,6 @@ namespace Gotcha.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("Game_Id")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("Maker_Id")
                         .HasColumnType("uniqueidentifier");
@@ -145,7 +150,7 @@ namespace Gotcha.Migrations
                     b.ToTable("Rules");
                 });
 
-            modelBuilder.Entity("Gotcha.Models.RuleLink", b =>
+            modelBuilder.Entity("Gotcha.Models.RuleRuleSet", b =>
                 {
                     b.Property<Guid>("RuleSet_Id")
                         .HasColumnType("uniqueidentifier");
@@ -157,7 +162,7 @@ namespace Gotcha.Migrations
 
                     b.HasIndex("Rule_Id");
 
-                    b.ToTable("RuleLinks");
+                    b.ToTable("RuleRuleSets");
                 });
 
             modelBuilder.Entity("Gotcha.Models.RuleSet", b =>
@@ -197,24 +202,19 @@ namespace Gotcha.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("Maker_Id")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("ProfileImage")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<int>("Rol")
+                        .HasColumnType("int");
+
                     b.Property<bool>("UserActive")
                         .HasColumnType("bit");
 
-                    b.Property<Guid?>("userId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("userId");
 
                     b.ToTable("Users");
                 });
@@ -238,7 +238,26 @@ namespace Gotcha.Migrations
                     b.ToTable("Words");
                 });
 
-            modelBuilder.Entity("Gotcha.Models.WordLink", b =>
+            modelBuilder.Entity("Gotcha.Models.WordSet", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Maker_Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Maker_Id");
+
+                    b.ToTable("WordSets");
+                });
+
+            modelBuilder.Entity("Gotcha.Models.WordWordset", b =>
                 {
                     b.Property<Guid>("WordSet_Id")
                         .HasColumnType("uniqueidentifier");
@@ -250,23 +269,7 @@ namespace Gotcha.Migrations
 
                     b.HasIndex("Word_Id");
 
-                    b.ToTable("WordLinks");
-                });
-
-            modelBuilder.Entity("Gotcha.Models.WordSet", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("Maker_Id")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Maker_Id");
-
-                    b.ToTable("WordSets");
+                    b.ToTable("WordWordsets");
                 });
 
             modelBuilder.Entity("Gotcha.Models.Contract", b =>
@@ -276,15 +279,19 @@ namespace Gotcha.Migrations
                         .HasForeignKey("Game_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Gotcha.Models.User", "User")
+                        .WithMany("Contracts")
+                        .HasForeignKey("User_Id")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Gotcha.Models.Game", b =>
                 {
                     b.HasOne("Gotcha.Models.GameType", "GameType")
                         .WithMany("Games")
-                        .HasForeignKey("GameType_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GameType_Id");
 
                     b.HasOne("Gotcha.Models.User", "User")
                         .WithMany("Games")
@@ -294,15 +301,11 @@ namespace Gotcha.Migrations
 
                     b.HasOne("Gotcha.Models.RuleSet", "RuleSet")
                         .WithMany("Games")
-                        .HasForeignKey("RuleSet_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RuleSet_Id");
 
                     b.HasOne("Gotcha.Models.WordSet", "WordSet")
                         .WithMany("Games")
-                        .HasForeignKey("WordSet_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("WordSet_Id");
                 });
 
             modelBuilder.Entity("Gotcha.Models.GameType", b =>
@@ -323,16 +326,16 @@ namespace Gotcha.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Gotcha.Models.RuleLink", b =>
+            modelBuilder.Entity("Gotcha.Models.RuleRuleSet", b =>
                 {
                     b.HasOne("Gotcha.Models.RuleSet", "RuleSet")
-                        .WithMany("RuleLinks")
+                        .WithMany("RuleRuleSet")
                         .HasForeignKey("RuleSet_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Gotcha.Models.Rule", "Rule")
-                        .WithMany("RuleLinks")
+                        .WithMany("RuleRuleSet")
                         .HasForeignKey("Rule_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -347,13 +350,6 @@ namespace Gotcha.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Gotcha.Models.User", b =>
-                {
-                    b.HasOne("Gotcha.Models.User", "user")
-                        .WithMany()
-                        .HasForeignKey("userId");
-                });
-
             modelBuilder.Entity("Gotcha.Models.Word", b =>
                 {
                     b.HasOne("Gotcha.Models.User", "User")
@@ -363,27 +359,27 @@ namespace Gotcha.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Gotcha.Models.WordLink", b =>
-                {
-                    b.HasOne("Gotcha.Models.WordSet", "WordSet")
-                        .WithMany("WordLinks")
-                        .HasForeignKey("WordSet_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Gotcha.Models.Word", "Word")
-                        .WithMany("WordLinks")
-                        .HasForeignKey("Word_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Gotcha.Models.WordSet", b =>
                 {
                     b.HasOne("Gotcha.Models.User", "User")
                         .WithMany("WordSets")
                         .HasForeignKey("Maker_Id")
                         .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Gotcha.Models.WordWordset", b =>
+                {
+                    b.HasOne("Gotcha.Models.WordSet", "WordSet")
+                        .WithMany("WordWordset")
+                        .HasForeignKey("WordSet_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Gotcha.Models.Word", "Word")
+                        .WithMany("WordWordset")
+                        .HasForeignKey("Word_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

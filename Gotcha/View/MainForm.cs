@@ -21,6 +21,7 @@ namespace Gotcha.View
 
         private void gameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel_Main.Controls.Clear();
             Game_Overview uc = new Game_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);
@@ -29,6 +30,7 @@ namespace Gotcha.View
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panel_Main.Controls.Clear();
             User_Overview uc = new User_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);

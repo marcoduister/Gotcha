@@ -23,9 +23,9 @@ namespace Gotcha.View.UserControls.Game
         private void Game_Overview_Load(object sender, EventArgs e)
         {
 
-            List<Models.Game> haha = _GameController.OverView();
+            List<Models.Game> gameList = _GameController.GetAllGames();
 
-            foreach (var Game in haha)
+            foreach (var Game in gameList)
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView_Games);
@@ -35,14 +35,22 @@ namespace Gotcha.View.UserControls.Game
                 row.Cells[3].Value = Game.StartTime;
                 row.Cells[4].Value = Game.Location;
                 row.Cells[5].Value = Game.User.FirstName+" "+Game.User.LastName;
-                DataGridViewButtonCell btn_Start = new DataGridViewButtonCell() { Value = "Start" };
+                if (Game.StartTime == null)
+                {
+                    DataGridViewButtonCell btn_Start = new DataGridViewButtonCell() { Value = "Start" };
+                    row.Cells[6] = btn_Start;
+                }
+                if (!Game.Archived)
+                {
+                    DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
+                    row.Cells[8] = btn_Edit;
+                    DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
+                    row.Cells[9] = btn_Delete;
+                }
+                
                 DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
-                DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
-                DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                row.Cells[6] = btn_Start;
                 row.Cells[7] = btn_Read;
-                row.Cells[8] = btn_Edit;
-                row.Cells[9] = btn_Delete;
+                
                 dataGridView_Games.Rows.Add(row);
             }
         }
@@ -53,6 +61,48 @@ namespace Gotcha.View.UserControls.Game
             Game_add uc = new Game_add();
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
+        }
+
+        private void dataGridView_Games_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Guid Game_id = Guid.Parse(dataGridView_Games.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnStart")
+            {
+                if (_GameController.StartGame(Game_id))
+                {
+                    MessageBox.Show("you have Started a game");
+                }
+                else
+                {
+                    MessageBox.Show("Something when wrong please try again!! ");
+                }
+            }
+            if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnRead")
+            {
+                //this.Controls.Clear();
+                //Game_Edit uc = new Game_Edit(Game_id);
+                //uc.Dock = DockStyle.Fill;
+                //this.Controls.Add(uc);
+            }
+            if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnedit")
+            {
+                this.Controls.Clear();
+                Game_Edit uc = new Game_Edit(Game_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
+            }
+            if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btndelete")
+            {
+                if(_GameController.Delete(Game_id))
+                {
+                    MessageBox.Show("you have deleted a game");
+                }
+                else
+                {
+                    MessageBox.Show("Something when wrong please try again!! ");
+                }
+            }
         }
     }
 }

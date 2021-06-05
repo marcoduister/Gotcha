@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Gotcha.Models
 {
-    class WordLink
+    class WordWordset
     {
-        public Guid Word_Id { get; set; }
-        public Word Word { get; set; }
 
+        //Atributte/property
         public Guid WordSet_Id { get; set; }
+        public Guid Word_Id { get; set; }
+
+        //Relations
+        public Word Word { get; set; }
         public WordSet WordSet { get; set; }
 
     }
