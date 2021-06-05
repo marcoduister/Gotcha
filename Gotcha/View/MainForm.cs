@@ -1,5 +1,6 @@
 ﻿using Gotcha.View.UserControls.Game;
 using Gotcha.View.UserControls.Users;
+using Gotcha.View.UserControls.Worden;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,14 @@ namespace Gotcha.View
         {
             panel_Main.Controls.Clear();
             User_Overview uc = new User_Overview();
+            uc.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(uc);
+        }
+
+        private void wordenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            Worden_Overview uc = new Worden_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);
         }

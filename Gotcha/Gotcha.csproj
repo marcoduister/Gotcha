@@ -297,6 +297,9 @@
     <EmbeddedResource Include="View\UserControls\Users\User_Overview.resx">
       <DependentUpon>User_Overview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\Worden_Overview.resx">
+      <DependentUpon>Worden_Overview.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

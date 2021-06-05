@@ -35,7 +35,7 @@ namespace Gotcha.View.UserControls.Game
                 row.Cells[3].Value = Game.StartTime;
                 row.Cells[4].Value = Game.Location;
                 row.Cells[5].Value = Game.User.FirstName+" "+Game.User.LastName;
-                if (Game.StartTime == null)
+                if (Game.StartTime == null && !Game.Archived)
                 {
                     DataGridViewButtonCell btn_Start = new DataGridViewButtonCell() { Value = "Start" };
                     row.Cells[6] = btn_Start;

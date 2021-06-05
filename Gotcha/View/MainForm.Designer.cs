@@ -89,6 +89,7 @@ namespace Gotcha.View
             this.wordenToolStripMenuItem.Name = "wordenToolStripMenuItem";
             this.wordenToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
             this.wordenToolStripMenuItem.Text = "Worden";
+            this.wordenToolStripMenuItem.Click += new System.EventHandler(this.wordenToolStripMenuItem_Click);
             // 
             // gameTypeToolStripMenuItem
             // 
