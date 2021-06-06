@@ -17,6 +17,33 @@ namespace Gotcha.BUS
         {
             
         }
+        internal string GetWordById(Guid word_id)
+        {
+            try
+            {
+                string word = Context.Words.AsNoTracking().First(f => f.Id == word_id).Content;
+
+                return word;
+            }
+            catch (Exception Ex)
+            {
+                return null;
+            }
+        }
+
+        internal WordSet GetWordSetById(Guid wordSet_Id)
+        {
+            try
+            {
+                WordSet wordSet = Context.WordSets.Include(i => i.WordWordset).ThenInclude(th =>th.Word).AsNoTracking().First(f => f.Id == wordSet_Id);
+
+                return wordSet;
+            }
+            catch (Exception Ex)
+            {
+                return null;
+            }
+        }
 
         public List<WordSet> GetAllWordSets()
         {
@@ -42,6 +69,70 @@ namespace Gotcha.BUS
             catch (Exception Ex)
             {
                 return null;
+            }
+        }
+
+        internal bool UpdateWord(string word, Guid word_id)
+        {
+            try
+            {
+                Word wordz = new Word()
+                {
+                    Id = word_id,
+                    Content = word,
+                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                };
+                //Alert hier moet ingeloged gebruiker id nog bij
+                Context.Words.Update(wordz);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
+
+
+
+        internal bool AddWord(string word)
+        {
+            try
+            {
+                Word wordz = new Word()
+                {
+                    Id = Guid.NewGuid(),
+                    Content = word,
+                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+            };
+                //Alert hier moet ingeloged gebruiker id nog bij
+                Context.Words.Add(wordz);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
+        internal bool AddWordSet(string Name)
+        {
+            try
+            {
+                WordSet wordSet = new WordSet()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = Name,
+                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                };
+                //Alert hier moet ingeloged gebruiker id nog bij
+                Context.WordSets.Add(wordSet);
+                Context.SaveChanges();
+                return true; ;
+            }
+            catch (Exception Ex)
+            {
+                return false;
             }
         }
 

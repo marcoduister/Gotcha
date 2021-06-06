@@ -103,5 +103,10 @@ namespace Gotcha.View.UserControls.Game
             }
             
         }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

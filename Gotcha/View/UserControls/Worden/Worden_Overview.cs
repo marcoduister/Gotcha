@@ -55,12 +55,18 @@ namespace Gotcha.View.UserControls.Worden
 
         private void button_CreateWorden_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Word_Create uc = new Word_Create();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void button_CreateWordSet_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            WordSet_Create uc = new WordSet_Create();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void dataGridView_Wordset_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -76,10 +82,10 @@ namespace Gotcha.View.UserControls.Worden
             }
             if (dataGridView_Wordset.Columns[e.ColumnIndex].Name == "WordSetEdit")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(word_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                this.Controls.Clear();
+                WordSet_Edit uc = new WordSet_Edit(wordSet_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
             }
             if (dataGridView_Wordset.Columns[e.ColumnIndex].Name == "WordSetDelete")
             {
@@ -107,10 +113,10 @@ namespace Gotcha.View.UserControls.Worden
             }
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordEdit")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(word_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                this.Controls.Clear();
+                Word_Edit uc = new Word_Edit(word_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
             }
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordDelete")
             {
