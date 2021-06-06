@@ -462,7 +462,6 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.label1);
             this.Name = "Game_Edit";
             this.Size = new System.Drawing.Size(910, 545);
-            this.Load += new System.EventHandler(this.Game_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

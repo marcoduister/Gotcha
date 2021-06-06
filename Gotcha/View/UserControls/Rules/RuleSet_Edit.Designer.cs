@@ -1,7 +1,7 @@
 ﻿
-namespace Gotcha.View.UserControls.Worden
+namespace Gotcha.View.UserControls.Rules
 {
-    partial class WordSet_Edit
+    partial class RuleSet_Edit
     {
         /// <summary> 
         /// Required designer variable.
@@ -31,17 +31,17 @@ namespace Gotcha.View.UserControls.Worden
         {
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelworden = new System.Windows.Forms.Label();
-            this.dataGridView_worden = new System.Windows.Forms.DataGridView();
+            this.labelRule = new System.Windows.Forms.Label();
+            this.dataGridView_Rule = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rule = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Btn_UpdateWordSet = new System.Windows.Forms.Button();
+            this.Btn_UpdateRuleSet = new System.Windows.Forms.Button();
             this.Btn_Cancel = new System.Windows.Forms.Button();
-            this.comboBox_Word = new System.Windows.Forms.ComboBox();
-            this.Btn_AddWord = new System.Windows.Forms.Button();
+            this.comboBox_Rule = new System.Windows.Forms.ComboBox();
+            this.Btn_AddRule = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_worden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rule)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox_Name
@@ -61,64 +61,67 @@ namespace Gotcha.View.UserControls.Worden
             this.label1.TabIndex = 28;
             this.label1.Text = "Name";
             // 
-            // labelworden
+            // labelRule
             // 
-            this.labelworden.AutoSize = true;
-            this.labelworden.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelworden.Location = new System.Drawing.Point(58, 42);
-            this.labelworden.Name = "labelworden";
-            this.labelworden.Size = new System.Drawing.Size(224, 32);
-            this.labelworden.TabIndex = 27;
-            this.labelworden.Text = "Update WordSet";
+            this.labelRule.AutoSize = true;
+            this.labelRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRule.Location = new System.Drawing.Point(58, 42);
+            this.labelRule.Name = "labelRule";
+            this.labelRule.Size = new System.Drawing.Size(216, 32);
+            this.labelRule.TabIndex = 27;
+            this.labelRule.Text = "Update RuleSet";
             // 
-            // dataGridView_worden
+            // dataGridView_Rule
             // 
-            this.dataGridView_worden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_worden.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Rule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Rule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Word,
+            this.Rule,
             this.Delete});
-            this.dataGridView_worden.Location = new System.Drawing.Point(453, 42);
-            this.dataGridView_worden.Name = "dataGridView_worden";
-            this.dataGridView_worden.RowHeadersWidth = 51;
-            this.dataGridView_worden.RowTemplate.Height = 24;
-            this.dataGridView_worden.Size = new System.Drawing.Size(395, 210);
-            this.dataGridView_worden.TabIndex = 32;
-            this.dataGridView_worden.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_worden_CellContentClick);
+            this.dataGridView_Rule.Location = new System.Drawing.Point(453, 42);
+            this.dataGridView_Rule.Name = "dataGridView_Rule";
+            this.dataGridView_Rule.RowHeadersWidth = 51;
+            this.dataGridView_Rule.RowTemplate.Height = 24;
+            this.dataGridView_Rule.Size = new System.Drawing.Size(395, 210);
+            this.dataGridView_Rule.TabIndex = 32;
+            this.dataGridView_Rule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Rule_CellContentClick);
             // 
             // Id
             // 
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
             this.Id.Width = 125;
             // 
-            // Word
+            // Rule
             // 
-            this.Word.HeaderText = "Word";
-            this.Word.MinimumWidth = 6;
-            this.Word.Name = "Word";
-            this.Word.Width = 125;
+            this.Rule.HeaderText = "Rule";
+            this.Rule.MinimumWidth = 6;
+            this.Rule.Name = "Rule";
+            this.Rule.ReadOnly = true;
+            this.Rule.Width = 125;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 125;
             // 
-            // Btn_UpdateWordSet
+            // Btn_UpdateRuleSet
             // 
-            this.Btn_UpdateWordSet.Location = new System.Drawing.Point(751, 278);
-            this.Btn_UpdateWordSet.Name = "Btn_UpdateWordSet";
-            this.Btn_UpdateWordSet.Size = new System.Drawing.Size(97, 33);
-            this.Btn_UpdateWordSet.TabIndex = 34;
-            this.Btn_UpdateWordSet.Text = "Update";
-            this.Btn_UpdateWordSet.UseVisualStyleBackColor = true;
-            this.Btn_UpdateWordSet.Click += new System.EventHandler(this.Btn_UpdateWordSet_Click);
+            this.Btn_UpdateRuleSet.Location = new System.Drawing.Point(751, 278);
+            this.Btn_UpdateRuleSet.Name = "Btn_UpdateRuleSet";
+            this.Btn_UpdateRuleSet.Size = new System.Drawing.Size(97, 33);
+            this.Btn_UpdateRuleSet.TabIndex = 34;
+            this.Btn_UpdateRuleSet.Text = "Update";
+            this.Btn_UpdateRuleSet.UseVisualStyleBackColor = true;
+            this.Btn_UpdateRuleSet.Click += new System.EventHandler(this.Btn_UpdateRuleSet_Click);
             // 
             // Btn_Cancel
             // 
@@ -130,23 +133,23 @@ namespace Gotcha.View.UserControls.Worden
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
-            // comboBox_Word
+            // comboBox_Rule
             // 
-            this.comboBox_Word.FormattingEnabled = true;
-            this.comboBox_Word.Location = new System.Drawing.Point(179, 171);
-            this.comboBox_Word.Name = "comboBox_Word";
-            this.comboBox_Word.Size = new System.Drawing.Size(233, 24);
-            this.comboBox_Word.TabIndex = 35;
+            this.comboBox_Rule.FormattingEnabled = true;
+            this.comboBox_Rule.Location = new System.Drawing.Point(179, 171);
+            this.comboBox_Rule.Name = "comboBox_Rule";
+            this.comboBox_Rule.Size = new System.Drawing.Size(233, 24);
+            this.comboBox_Rule.TabIndex = 35;
             // 
-            // Btn_AddWord
+            // Btn_AddRule
             // 
-            this.Btn_AddWord.Location = new System.Drawing.Point(315, 219);
-            this.Btn_AddWord.Name = "Btn_AddWord";
-            this.Btn_AddWord.Size = new System.Drawing.Size(97, 33);
-            this.Btn_AddWord.TabIndex = 36;
-            this.Btn_AddWord.Text = "Add";
-            this.Btn_AddWord.UseVisualStyleBackColor = true;
-            this.Btn_AddWord.Click += new System.EventHandler(this.Btn_AddWord_Click);
+            this.Btn_AddRule.Location = new System.Drawing.Point(315, 219);
+            this.Btn_AddRule.Name = "Btn_AddRule";
+            this.Btn_AddRule.Size = new System.Drawing.Size(97, 33);
+            this.Btn_AddRule.TabIndex = 36;
+            this.Btn_AddRule.Text = "Add";
+            this.Btn_AddRule.UseVisualStyleBackColor = true;
+            this.Btn_AddRule.Click += new System.EventHandler(this.Btn_AddRule_Click);
             // 
             // label2
             // 
@@ -154,26 +157,26 @@ namespace Gotcha.View.UserControls.Worden
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(65, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(43, 20);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Worden";
+            this.label2.Text = "Rule";
             // 
-            // WordSet_Edit
+            // RuleSet_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Btn_AddWord);
-            this.Controls.Add(this.comboBox_Word);
-            this.Controls.Add(this.Btn_UpdateWordSet);
+            this.Controls.Add(this.Btn_AddRule);
+            this.Controls.Add(this.comboBox_Rule);
+            this.Controls.Add(this.Btn_UpdateRuleSet);
             this.Controls.Add(this.Btn_Cancel);
-            this.Controls.Add(this.dataGridView_worden);
+            this.Controls.Add(this.dataGridView_Rule);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.labelworden);
-            this.Name = "WordSet_Edit";
+            this.Controls.Add(this.labelRule);
+            this.Name = "RuleSet_Edit";
             this.Size = new System.Drawing.Size(910, 337);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_worden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,15 +186,15 @@ namespace Gotcha.View.UserControls.Worden
 
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelworden;
-        private System.Windows.Forms.DataGridView dataGridView_worden;
-        private System.Windows.Forms.Button Btn_UpdateWordSet;
+        private System.Windows.Forms.Label labelRule;
+        private System.Windows.Forms.DataGridView dataGridView_Rule;
+        private System.Windows.Forms.Button Btn_UpdateRuleSet;
         private System.Windows.Forms.Button Btn_Cancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Word;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rule;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.ComboBox comboBox_Word;
-        private System.Windows.Forms.Button Btn_AddWord;
+        private System.Windows.Forms.ComboBox comboBox_Rule;
+        private System.Windows.Forms.Button Btn_AddRule;
         private System.Windows.Forms.Label label2;
     }
 }

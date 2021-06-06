@@ -1,4 +1,5 @@
 ﻿using Gotcha.View.UserControls.Game;
+using Gotcha.View.UserControls.Rules;
 using Gotcha.View.UserControls.Users;
 using Gotcha.View.UserControls.Worden;
 using System;
@@ -41,6 +42,14 @@ namespace Gotcha.View
         {
             panel_Main.Controls.Clear();
             Worden_Overview uc = new Worden_Overview();
+            uc.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(uc);
+        }
+
+        private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            Rules_Overview uc = new Rules_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);
         }

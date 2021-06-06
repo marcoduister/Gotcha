@@ -22,7 +22,10 @@ namespace Gotcha.View.UserControls.Worden
             InitializeComponent();
             _WordSet_id = WordSet_Id;
 
-            FillGridDataAndTextBox();
+            WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
+            textBox_Name.Text = wordset.Name;
+
+            FillGridDataAndTextBox(wordset);
             FillComboboxData();
 
 
@@ -36,10 +39,11 @@ namespace Gotcha.View.UserControls.Worden
             comboBox_Word.DisplayMember = "Content";
             comboBox_Word.ValueMember = "Id";
         }
-        private void FillGridDataAndTextBox()
+
+        private void FillGridDataAndTextBox(WordSet wordset)
         {
-            WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
-            textBox_Name.Text = wordset.Name;
+            dataGridView_worden.Rows.Clear();
+            dataGridView_worden.Refresh();
 
             foreach (var wordWordset in wordset.WordWordset)
             {
@@ -54,7 +58,19 @@ namespace Gotcha.View.UserControls.Worden
 
         private void Btn_UpdateWordSet_Click(object sender, EventArgs e)
         {
+            string Name = textBox_Name.Text;
+            if (_WordzController.UpdateWordSet(Name,_WordSet_id))
+            {
+                MessageBox.Show("you have Updated WordSet");
 
+                //this wil reload the datagridview 
+                WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
+                FillGridDataAndTextBox(wordset);
+            }
+            else
+            {
+                MessageBox.Show("Something when wrong please try again!! ");
+            }
         }
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
@@ -64,7 +80,41 @@ namespace Gotcha.View.UserControls.Worden
 
         private void Btn_AddWord_Click(object sender, EventArgs e)
         {
+            Guid Word_Id = Guid.Parse(comboBox_Word.SelectedValue.ToString());
 
+            if (_WordzController.AddWordWordSet(Word_Id, _WordSet_id))
+            {
+                MessageBox.Show("you have Add a word to Wordset");
+
+                //this wil reload the datagridview 
+                WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
+                FillGridDataAndTextBox(wordset);
+            }
+            else
+            {
+                MessageBox.Show("Something when wrong please try again!! ");
+            }
+        }
+        
+        private void dataGridView_worden_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Guid word_id = Guid.Parse(dataGridView_worden.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            if (dataGridView_worden.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                if (_WordzController.DeleteWordWordSet(word_id,_WordSet_id))
+                {
+                    MessageBox.Show("you have deleted a wordset");
+
+                    //this wil reload the datagridview 
+                    WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
+                    FillGridDataAndTextBox(wordset);
+                }
+                else
+                {
+                    MessageBox.Show("Something when wrong please try again!! ");
+                }
+            }
         }
     }
 }

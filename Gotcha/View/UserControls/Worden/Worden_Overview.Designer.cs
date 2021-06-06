@@ -180,7 +180,7 @@ namespace Gotcha.View.UserControls.Worden
             this.TabWorden.Location = new System.Drawing.Point(4, 25);
             this.TabWorden.Name = "TabWorden";
             this.TabWorden.Padding = new System.Windows.Forms.Padding(3);
-            this.TabWorden.Size = new System.Drawing.Size(899, 513);
+            this.TabWorden.Size = new System.Drawing.Size(899, 516);
             this.TabWorden.TabIndex = 1;
             this.TabWorden.Text = "Word";
             this.TabWorden.UseVisualStyleBackColor = true;

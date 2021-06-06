@@ -35,7 +35,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                WordSet wordSet = Context.WordSets.Include(i => i.WordWordset).ThenInclude(th =>th.Word).AsNoTracking().First(f => f.Id == wordSet_Id);
+                WordSet wordSet = Context.WordSets.AsNoTracking().Include(i => i.WordWordset).ThenInclude(th =>th.Word).AsNoTracking().First(f => f.Id == wordSet_Id);
 
                 return wordSet;
             }
@@ -79,8 +79,7 @@ namespace Gotcha.BUS
                 Word wordz = new Word()
                 {
                     Id = word_id,
-                    Content = word,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Content = word
                 };
                 //Alert hier moet ingeloged gebruiker id nog bij
                 Context.Words.Update(wordz);
@@ -93,7 +92,26 @@ namespace Gotcha.BUS
             }
         }
 
-
+        internal bool UpdateWordSet(string Name,Guid wordSet_id)
+        {
+            try
+            {
+                WordSet wordSet = new WordSet()
+                {
+                    Id = wordSet_id,
+                    Name = Name,
+                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                };
+                //Alert hier moet ingeloged gebruiker id nog bij
+                Context.WordSets.Update(wordSet);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
 
         internal bool AddWord(string word)
         {
@@ -135,6 +153,25 @@ namespace Gotcha.BUS
                 return false;
             }
         }
+        internal bool AddWordWordSet(Guid word_Id, Guid WordSet_Id)
+        {
+            try
+            {
+                WordWordset WordwordSet = new WordWordset()
+                {
+                    WordSet_Id = WordSet_Id,
+                    Word_Id = word_Id,
+                };
+                //Alert hier moet ingeloged gebruiker id nog bij
+                Context.WordWordsets.Add(WordwordSet);
+                Context.SaveChanges();
+                return true; ;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
 
         internal bool DeleteWord(Guid word_id)
         {
@@ -151,12 +188,28 @@ namespace Gotcha.BUS
                 return false;
             }
         }
+
         internal bool DeleteWordSet(Guid wordSet_id)
         {
             try
             {
                 WordSet DeletewordSet = Context.WordSets.Include(i => i.WordWordset).First(f => f.Id == wordSet_id);
                 Context.Remove(DeletewordSet);
+                Context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
+        internal bool DeleteWordWordSet(Guid word_Id, Guid WordSet_Id)
+        {
+            try
+            {
+                WordWordset WordwordSet = Context.WordWordsets.First(f => f.Word_Id == word_Id && f.WordSet_Id == WordSet_Id);
+                Context.Remove(WordwordSet);
                 Context.SaveChanges();
 
                 return true;

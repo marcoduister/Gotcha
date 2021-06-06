@@ -246,11 +246,35 @@
     <Compile Include="View\UserControls\Game\Game_Overview.Designer.cs">
       <DependentUpon>Game_Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Create.Designer.cs">
+      <DependentUpon>RuleSet_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Edit.Designer.cs">
+      <DependentUpon>RuleSet_Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.Designer.cs">
       <DependentUpon>Rules_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Create.Designer.cs">
+      <DependentUpon>Rule_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Edit.Designer.cs">
+      <DependentUpon>Rule_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Users\User_Add.cs">
       <SubType>UserControl</SubType>
@@ -314,6 +338,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_Overview.resx">
       <DependentUpon>Game_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Create.resx">
+      <DependentUpon>RuleSet_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Edit.resx">
+      <DependentUpon>RuleSet_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rules_Overview.resx">
+      <DependentUpon>Rules_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rule_Create.resx">
+      <DependentUpon>Rule_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rule_Edit.resx">
+      <DependentUpon>Rule_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Users\User_Add.resx">
       <DependentUpon>User_Add.cs</DependentUpon>
