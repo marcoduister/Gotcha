@@ -23,12 +23,12 @@ namespace Gotcha.BUS
         }
         public Game GetGameById(Guid Game_Id)
         {
-            return Context.Games.Include(e => e.Contracts).Where(g => g.Id == Game_Id).First();
+            return Context.Games.Include(e => e.Contracts).ThenInclude(th =>th.User).AsNoTracking().Where(g => g.Id == Game_Id).First();
         }
 
-        internal void GetcontractsByGameId(Guid game_Id)
+        internal List<Contract> GetcontractsByGameId(Guid Game_Id)
         {
-            
+            return Context.Contracts.Include(th => th.User).AsNoTracking().Where(g => g.Game_Id == Game_Id).ToList();
         }
         internal (List<WordSet>,List<GameType>,List<RuleSet>) GetGameComboLists()
         {
@@ -140,6 +140,58 @@ namespace Gotcha.BUS
                 Game DeleteGame = Context.Games.Include(i => i.Contracts)
                     .First(e => e.Archived == false && e.StartTime == null && e.Id == Game_Id);
                 Context.Remove(DeleteGame);
+                Context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
+
+        internal bool DeleteContract(Guid user_id, Guid game_Id)
+        {
+            try
+            {
+                Contract DeleteContract = Context.Contracts.First(e => e.Game_Id == game_Id && e.User_Id == user_id);
+                Context.Remove(DeleteContract);
+                Context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
+
+        internal bool KillContract(Guid user_id, Guid Game_Id)
+        {
+            try
+            {
+                List<Contract> contracts = GetcontractsByGameId(Game_Id);
+                int CurrentUserIndex = 0;
+                int KillerUserIndex = 0;
+
+                foreach (var item in contracts)
+                {
+                    if (item.EliminatedTime == null)
+                    {
+                        KillerUserIndex = contracts.FindIndex(a => a.User_Id == item.User_Id);
+                    }
+                    else if (item.User_Id == user_id)
+                    {
+                        CurrentUserIndex = contracts.FindIndex(a => a.User_Id == user_id);
+                        item.EliminatedTime = DateTime.Now;
+                        contracts[KillerUserIndex].Eliminations += 1;
+                        break;
+                    }
+                }
+
+                //Contract Contract = Context.Contracts.First(e => e.Game_Id == game_Id && e.User_Id == user_id);
+                
+                Context.UpdateRange(contracts);
                 Context.SaveChanges();
 
                 return true;

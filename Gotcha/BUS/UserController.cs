@@ -126,19 +126,5 @@ namespace Gotcha.BUS
                 return null;
             }
         }
-
-        internal void Logout()
-        {
-            foreach (Form fm in Application.OpenForms)
-            {
-                if (fm.Name != "LoginForm")
-                {
-                    fm.Close();
-                    Properties.Settings.Default["UserId"] = "";
-                    Properties.Settings.Default["UserRol"] = 0;
-                    Properties.Settings.Default.Save();
-                }
-            }
-        }
     }
 }

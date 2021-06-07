@@ -15,41 +15,45 @@ namespace Gotcha.View.UserControls.Game
     public partial class Game_Edit : UserControl
     {
         private GameController _GameController = new GameController();
+        private Guid _Game_Id;
+
         public Game_Edit(Guid Game_Id)
         {
             InitializeComponent();
+            _Game_Id = Game_Id;
 
             Models.Game CurrentGame = _GameController.GetGameById(Game_Id);
 
             FillComboboxData(CurrentGame);
+            Filldatagridview(CurrentGame);
 
             textBox_Name.Text = CurrentGame.Name;
             textBox_Location.Text = CurrentGame.Location;
             textBoxActivePlayer.Text = CurrentGame.Contracts.Count().ToString();
             textBox_Game_id.Text = CurrentGame.Id.ToString();
+        }
 
-
+        private void Filldatagridview(Models.Game CurrentGame)
+        {
+            dataGridView_gameUsers.Rows.Clear();
             // this will fill the contract list and wil fill the win textboxes
             foreach (var contract in CurrentGame.Contracts)
             {
+                
                 int mostkill = CurrentGame.Contracts.Max(w => w.Eliminations);
                 if (contract.Eliminations == mostkill)
                 {
                     textBox_Most.Text = contract.User.FirstName + " " + contract.User.LastName;
                 }
-                
+
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView_gameUsers);
                 row.Cells[0].Value = contract.Id;
-                row.Cells[1].Value = contract.User.FirstName +" "+ contract.User.LastName;
-                DataGridViewButtonCell btn_Kill = new DataGridViewButtonCell() { Value = "Kill" };
-                DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                row.Cells[2] = btn_Kill;
-                row.Cells[3] = btn_Delete;
+                row.Cells[1].Value = contract.User.FirstName + " " + contract.User.LastName;
                 dataGridView_gameUsers.Rows.Add(row);
             }
-
         }
+
         private void FillComboboxData(Models.Game CurrentGame) 
         {
             var results = _GameController.GetGameComboLists();
@@ -89,6 +93,8 @@ namespace Gotcha.View.UserControls.Game
             if (_GameController.AddContractUser(new Guid(User_Id),new Guid(Game_id)))
             {
                 MessageBox.Show("you have added a User to Contracts");
+                Models.Game CurrentGame = _GameController.GetGameById(_Game_Id);
+                Filldatagridview(CurrentGame);
             }
             else
             {
@@ -99,7 +105,46 @@ namespace Gotcha.View.UserControls.Game
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
+            this.Controls.Clear();
+            Game_Overview uc = new Game_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
+        }
 
+        private void dataGridView_gameUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Guid User_id = Guid.Parse(dataGridView_gameUsers.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+            if (dataGridView_gameUsers.Columns[e.ColumnIndex].Name == "btn_Delete")
+            {
+                if (_GameController.DeleteContract(User_id,_Game_Id))
+                {
+                    MessageBox.Show("you have deleted a User from contracts");
+
+                    //this wil reload the datagridview 
+                    Models.Game CurrentGame = _GameController.GetGameById(_Game_Id);
+                    Filldatagridview(CurrentGame);
+                }
+                else
+                {
+                    MessageBox.Show("Something when wrong please try again!! ");
+                }
+            }
+            if (dataGridView_gameUsers.Columns[e.ColumnIndex].Name == "btn_Kill")
+            {
+                if (_GameController.KillContract(User_id, _Game_Id))
+                {
+                    MessageBox.Show("you have Killed a User");
+
+                    //this wil reload the datagridview 
+                    Models.Game CurrentGame = _GameController.GetGameById(_Game_Id);
+                    Filldatagridview(CurrentGame);
+                }
+                else
+                {
+                    MessageBox.Show("Something when wrong please try again!! ");
+                }
+            }
         }
     }
 }

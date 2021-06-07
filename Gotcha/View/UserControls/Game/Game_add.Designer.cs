@@ -36,6 +36,10 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Location = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Btn_CreateGame = new System.Windows.Forms.Button();
             this.Btn_addUser = new System.Windows.Forms.Button();
@@ -43,10 +47,6 @@ namespace Gotcha.View.UserControls.Game
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -139,6 +139,35 @@ namespace Gotcha.View.UserControls.Game
             this.dataGridView1.Size = new System.Drawing.Size(396, 365);
             this.dataGridView1.TabIndex = 8;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // User
+            // 
+            this.User.HeaderText = "User";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            this.User.Width = 125;
+            // 
+            // Kill
+            // 
+            this.Kill.HeaderText = "Kill";
+            this.Kill.MinimumWidth = 6;
+            this.Kill.Name = "Kill";
+            this.Kill.Width = 125;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 125;
+            // 
             // Btn_Cancel
             // 
             this.Btn_Cancel.Location = new System.Drawing.Point(646, 499);
@@ -147,6 +176,7 @@ namespace Gotcha.View.UserControls.Game
             this.Btn_Cancel.TabIndex = 9;
             this.Btn_Cancel.Text = "Cancel";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // Btn_CreateGame
             // 
@@ -202,35 +232,6 @@ namespace Gotcha.View.UserControls.Game
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 14;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            this.Id.Width = 125;
-            // 
-            // User
-            // 
-            this.User.HeaderText = "User";
-            this.User.MinimumWidth = 6;
-            this.User.Name = "User";
-            this.User.Width = 125;
-            // 
-            // Kill
-            // 
-            this.Kill.HeaderText = "Kill";
-            this.Kill.MinimumWidth = 6;
-            this.Kill.Name = "Kill";
-            this.Kill.Width = 125;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Width = 125;
             // 
             // textBox1
             // 

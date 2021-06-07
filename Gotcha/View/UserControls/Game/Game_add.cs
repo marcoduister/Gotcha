@@ -36,5 +36,15 @@ namespace Gotcha.View.UserControls.Game
             };
             _GameController.AddGame(game);
         }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+            {
+                this.Controls.Clear();
+                Game_Overview uc = new Game_Overview();
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
+            }
+        }
     }
 }

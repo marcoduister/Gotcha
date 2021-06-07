@@ -90,7 +90,6 @@ namespace Gotcha.BUS
                     Description = Description,
                     Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.GameTypes.Update(gameType);
                 Context.SaveChanges();
                 return true;
