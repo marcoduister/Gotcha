@@ -118,6 +118,7 @@ namespace Gotcha.View
             this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
             this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
+            this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
             // 
             // MainForm
             // 

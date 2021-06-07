@@ -79,9 +79,9 @@ namespace Gotcha.BUS
                 Word wordz = new Word()
                 {
                     Id = word_id,
-                    Content = word
+                    Content = word,
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.Words.Update(wordz);
                 Context.SaveChanges();
                 return true;
@@ -100,9 +100,8 @@ namespace Gotcha.BUS
                 {
                     Id = wordSet_id,
                     Name = Name,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.WordSets.Update(wordSet);
                 Context.SaveChanges();
                 return true;
@@ -121,9 +120,8 @@ namespace Gotcha.BUS
                 {
                     Id = Guid.NewGuid(),
                     Content = word,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
-            };
-                //Alert hier moet ingeloged gebruiker id nog bij
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId)
+                };
                 Context.Words.Add(wordz);
                 Context.SaveChanges();
                 return true;
@@ -141,9 +139,8 @@ namespace Gotcha.BUS
                 {
                     Id = Guid.NewGuid(),
                     Name = Name,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.WordSets.Add(wordSet);
                 Context.SaveChanges();
                 return true; ;
@@ -162,7 +159,6 @@ namespace Gotcha.BUS
                     WordSet_Id = WordSet_Id,
                     Word_Id = word_Id,
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.WordWordsets.Add(WordwordSet);
                 Context.SaveChanges();
                 return true; ;
