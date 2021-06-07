@@ -1,4 +1,5 @@
 ﻿using Gotcha.BUS;
+using Gotcha.View.UserControls.Rules;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace Gotcha.View.UserControls.Rule
             if (_RulezController.AddRule(Rule, Description))
             {
                 MessageBox.Show("you have added a Rule");
+                Btn_Cancel_Click(null, null);
             }
             else
             {
@@ -37,7 +39,10 @@ namespace Gotcha.View.UserControls.Rule
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Rules_Overview uc = new Rules_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

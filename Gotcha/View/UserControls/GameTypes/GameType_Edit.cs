@@ -1,4 +1,5 @@
 ﻿using Gotcha.BUS;
+using Gotcha.View.UserControls.GameTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,7 @@ namespace Gotcha.View.UserControls.GameTypes
             if (_GameTypeController.UpdateGameType(Name, Description, _GameType_id))
             {
                 MessageBox.Show("you have Updated a GameType");
+                Btn_Cancel_Click(null, null);
             }
             else
             {
@@ -40,7 +42,10 @@ namespace Gotcha.View.UserControls.GameTypes
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            GameType_Overview uc = new GameType_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

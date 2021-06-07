@@ -21,7 +21,10 @@ namespace Gotcha.View.UserControls.Rules
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Rules_Overview uc = new Rules_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void Btn_CreateRuleSet_Click(object sender, EventArgs e)
@@ -30,6 +33,7 @@ namespace Gotcha.View.UserControls.Rules
             if (_RulezController.AddRuleSet(RuleSetName))
             {
                 MessageBox.Show("you have Created a RuleSet go To edit to add Rules");
+                Btn_Cancel_Click(null, null);
             }
             else
             {

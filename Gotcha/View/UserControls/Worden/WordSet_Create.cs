@@ -21,7 +21,10 @@ namespace Gotcha.View.UserControls.Worden
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Worden_Overview uc = new Worden_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void Btn_CreateWordSet_Click(object sender, EventArgs e)
@@ -30,6 +33,7 @@ namespace Gotcha.View.UserControls.Worden
             if (_WordzController.AddWordSet(WordSetName))
             {
                 MessageBox.Show("you have Created a wordset go To edit to add Words");
+                Btn_Cancel_Click(null, null);
             }
             else
             {

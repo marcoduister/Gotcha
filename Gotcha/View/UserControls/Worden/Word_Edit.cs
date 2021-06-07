@@ -30,6 +30,7 @@ namespace Gotcha.View.UserControls.Worden
             if (_WordzController.UpdateWord(word, Word_id))
             {
                 MessageBox.Show("you have Updated a word");
+                Btn_Cancel_Click(null, null);
             }
             else
             {
@@ -39,7 +40,10 @@ namespace Gotcha.View.UserControls.Worden
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Worden_Overview uc = new Worden_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

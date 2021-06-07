@@ -62,10 +62,8 @@ namespace Gotcha.View.UserControls.Rules
             if (_RulezController.UpdateRuleSet(Name, _RuleSet_id))
             {
                 MessageBox.Show("you have Updated RuleSet");
+                Btn_Cancel_Click(null, null);
 
-                //this wil reload the datagridview 
-                RuleSet Ruleset = _RulezController.GetRuleSetById(_RuleSet_id);
-                FillGridDataAndTextBox(Ruleset);
             }
             else
             {
@@ -75,7 +73,10 @@ namespace Gotcha.View.UserControls.Rules
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Rules_Overview uc = new Rules_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void Btn_AddRule_Click(object sender, EventArgs e)

@@ -34,6 +34,7 @@ namespace Gotcha.View.UserControls.Rules
             if (_RulezController.UpdateRule(Rule , Description, Rule_id))
             {
                 MessageBox.Show("you have Updated a Rule");
+                Btn_Cancel_Click(null, null);
             }
             else
             {
@@ -43,7 +44,10 @@ namespace Gotcha.View.UserControls.Rules
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Rules_Overview uc = new Rules_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

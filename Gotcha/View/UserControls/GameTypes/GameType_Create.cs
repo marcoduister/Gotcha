@@ -26,6 +26,7 @@ namespace Gotcha.View.UserControls.GameTypes
             if (_GameTypeController.AddGameType(Name, Description))
             {
                 MessageBox.Show("you have added a GameType");
+                Btn_Cancel_Click(null,null);
             }
             else
             {
@@ -35,7 +36,10 @@ namespace Gotcha.View.UserControls.GameTypes
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            GameType_Overview uc = new GameType_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

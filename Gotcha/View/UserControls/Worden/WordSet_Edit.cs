@@ -62,10 +62,7 @@ namespace Gotcha.View.UserControls.Worden
             if (_WordzController.UpdateWordSet(Name,_WordSet_id))
             {
                 MessageBox.Show("you have Updated WordSet");
-
-                //this wil reload the datagridview 
-                WordSet wordset = _WordzController.GetWordSetById(_WordSet_id);
-                FillGridDataAndTextBox(wordset);
+                Btn_Cancel_Click(null, null);
             }
             else
             {
@@ -75,7 +72,10 @@ namespace Gotcha.View.UserControls.Worden
 
         private void Btn_Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            Worden_Overview uc = new Worden_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
 
         private void Btn_AddWord_Click(object sender, EventArgs e)
