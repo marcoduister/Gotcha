@@ -84,6 +84,7 @@ namespace Gotcha.View.UserControls.Rules
             this.label1.Size = new System.Drawing.Size(242, 32);
             this.label1.TabIndex = 4;
             this.label1.Text = "RuleSet Overview";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button_CreateRuleSet
             // 
@@ -283,6 +284,7 @@ namespace Gotcha.View.UserControls.Rules
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TabControl);
+
             this.Size = new System.Drawing.Size(910, 545);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_RuleSet)).EndInit();

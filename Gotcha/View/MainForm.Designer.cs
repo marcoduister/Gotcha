@@ -97,6 +97,7 @@ namespace Gotcha.View
             this.gameTypeToolStripMenuItem.Name = "gameTypeToolStripMenuItem";
             this.gameTypeToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
             this.gameTypeToolStripMenuItem.Text = "GameType";
+            this.gameTypeToolStripMenuItem.Click += new System.EventHandler(this.gameTypeToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
