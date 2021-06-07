@@ -193,7 +193,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                WordSet DeletewordSet = Context.WordSets.Include(i => i.WordWordset).First(f => f.Id == wordSet_id);
+                WordSet DeletewordSet = Context.WordSets.Include(i => i.Games).Include(i => i.WordWordset).First(f => f.Id == wordSet_id);
                 Context.Remove(DeletewordSet);
                 Context.SaveChanges();
 

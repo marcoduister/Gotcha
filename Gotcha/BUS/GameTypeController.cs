@@ -15,7 +15,18 @@ namespace Gotcha.BUS
 
         internal bool DeleteGameType(Guid gameType_id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                GameType DeleteGameType = Context.GameTypes.Include(i => i.Games).First(f => f.Id == gameType_id);
+                Context.Remove(DeleteGameType);
+                Context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
         }
 
         internal List<GameType> GetAllGameTypes()

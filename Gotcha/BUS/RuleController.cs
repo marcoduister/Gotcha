@@ -197,7 +197,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                RuleSet DeleteRuleSet = Context.RuleSets.Include(i => i.RuleRuleSet).First(f => f.Id == RuleSet_id);
+                RuleSet DeleteRuleSet = Context.RuleSets.Include(i => i.Games).Include(i => i.RuleRuleSet).First(f => f.Id == RuleSet_id);
                 Context.Remove(DeleteRuleSet);
                 Context.SaveChanges();
 
