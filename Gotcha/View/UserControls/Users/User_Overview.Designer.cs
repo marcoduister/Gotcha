@@ -31,8 +31,15 @@ namespace Gotcha.View.UserControls.Users
         {
             this.label1 = new System.Windows.Forms.Label();
             this.AddUser = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView_Users = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,24 +62,69 @@ namespace Gotcha.View.UserControls.Users
             this.AddUser.UseVisualStyleBackColor = true;
             this.AddUser.Click += new System.EventHandler(this.AddUser_Click);
             // 
-            // dataGridView1
+            // dataGridView_Users
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 320);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView_Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Users.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.FirstName,
+            this.LastName,
+            this.Email,
+            this.Birthdate,
+            this.btn_Edit,
+            this.btn_Delete});
+            this.dataGridView_Users.Location = new System.Drawing.Point(17, 106);
+            this.dataGridView_Users.Name = "dataGridView_Users";
+            this.dataGridView_Users.Size = new System.Drawing.Size(644, 320);
+            this.dataGridView_Users.TabIndex = 2;
+            this.dataGridView_Users.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Users_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.HeaderText = "Birthdate";
+            this.Birthdate.Name = "Birthdate";
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.HeaderText = "Edit";
+            this.btn_Edit.Name = "btn_Edit";
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.HeaderText = "Delete";
+            this.btn_Delete.Name = "btn_Delete";
             // 
             // User_Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView_Users);
             this.Controls.Add(this.AddUser);
             this.Controls.Add(this.label1);
             this.Name = "User_Overview";
             this.Size = new System.Drawing.Size(682, 443);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.User_Overview_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +134,13 @@ namespace Gotcha.View.UserControls.Users
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AddUser;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Users;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthdate;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_Delete;
     }
 }

@@ -41,6 +41,8 @@ namespace Gotcha.View.UserControls.Users
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CreateUser = new System.Windows.Forms.Button();
+            this.Password = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -136,7 +138,7 @@ namespace Gotcha.View.UserControls.Users
             // 
             // CreateUser
             // 
-            this.CreateUser.Location = new System.Drawing.Point(43, 279);
+            this.CreateUser.Location = new System.Drawing.Point(442, 208);
             this.CreateUser.Name = "CreateUser";
             this.CreateUser.Size = new System.Drawing.Size(119, 41);
             this.CreateUser.TabIndex = 11;
@@ -144,10 +146,28 @@ namespace Gotcha.View.UserControls.Users
             this.CreateUser.UseVisualStyleBackColor = true;
             this.CreateUser.Click += new System.EventHandler(this.CreateUser_Click);
             // 
+            // Password
+            // 
+            this.Password.Location = new System.Drawing.Point(129, 255);
+            this.Password.Name = "Password";
+            this.Password.Size = new System.Drawing.Size(156, 20);
+            this.Password.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(41, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Password";
+            // 
             // User_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.CreateUser);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -181,5 +201,7 @@ namespace Gotcha.View.UserControls.Users
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button CreateUser;
+        private System.Windows.Forms.TextBox Password;
+        private System.Windows.Forms.Label label7;
     }
 }

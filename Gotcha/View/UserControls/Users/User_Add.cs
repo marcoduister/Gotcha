@@ -18,11 +18,12 @@ namespace Gotcha.View.UserControls.Users
         public User_Add()
         {
             InitializeComponent();
+            UserRol.DataSource = Enum.GetValues(typeof(Enums.Rolen));
         }
 
         private void CreateUser_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(userController.AddUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value));
+            MessageBox.Show(userController.AddUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, UserRol.SelectedIndex, Password.Text));
         }
     }
 }
