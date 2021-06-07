@@ -177,6 +177,7 @@ namespace Gotcha.View.UserControls.Game
             this.Btn_Cancel.TabIndex = 9;
             this.Btn_Cancel.Text = "Cancel";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
+            this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
             // Btn_UpdateGame
             // 
@@ -461,7 +462,6 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.label1);
             this.Name = "Game_Edit";
             this.Size = new System.Drawing.Size(910, 545);
-            this.Load += new System.EventHandler(this.Game_add_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

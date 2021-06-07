@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\GameController.cs" />
+    <Compile Include="BUS\GameTypeController.cs" />
     <Compile Include="BUS\RuleController.cs" />
     <Compile Include="BUS\UserController.cs" />
     <Compile Include="BUS\WordController.cs" />
@@ -208,11 +209,11 @@
     <Compile Include="Models\Word.cs" />
     <Compile Include="Models\WordWordset.cs" />
     <Compile Include="Models\WordSet.cs" />
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -222,11 +223,23 @@
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControls\GameTypes\Gametype_Overview.cs">
+    <Compile Include="View\UserControls\GameTypes\GameType_Create.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControls\GameTypes\Gametype_Overview.Designer.cs">
-      <DependentUpon>Gametype_Overview.cs</DependentUpon>
+    <Compile Include="View\UserControls\GameTypes\GameType_Create.Designer.cs">
+      <DependentUpon>GameType_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\GameTypes\GameType_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\GameTypes\GameType_Edit.Designer.cs">
+      <DependentUpon>GameType_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\GameTypes\GameType_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\GameTypes\GameType_Overview.Designer.cs">
+      <DependentUpon>GameType_Overview.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Game\Game_Edit.cs">
       <SubType>UserControl</SubType>
@@ -246,11 +259,35 @@
     <Compile Include="View\UserControls\Game\Game_Overview.Designer.cs">
       <DependentUpon>Game_Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Create.Designer.cs">
+      <DependentUpon>RuleSet_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Edit.Designer.cs">
+      <DependentUpon>RuleSet_Edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.Designer.cs">
       <DependentUpon>Rules_Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Create.Designer.cs">
+      <DependentUpon>Rule_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\Rule_Edit.Designer.cs">
+      <DependentUpon>Rule_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Users\User_Add.cs">
       <SubType>UserControl</SubType>
@@ -276,6 +313,30 @@
     <Compile Include="View\UserControls\Worden\Worden_Overview.Designer.cs">
       <DependentUpon>Worden_Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Create.Designer.cs">
+      <DependentUpon>WordSet_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Edit.Designer.cs">
+      <DependentUpon>WordSet_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Word_Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Word_Create.Designer.cs">
+      <DependentUpon>Word_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Word_Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\Word_Edit.Designer.cs">
+      <DependentUpon>Word_Edit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -285,8 +346,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\GameTypes\GameType_Create.resx">
+      <DependentUpon>GameType_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\GameTypes\GameType_Edit.resx">
+      <DependentUpon>GameType_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\GameTypes\GameType_Overview.resx">
+      <DependentUpon>GameType_Overview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_Edit.resx">
       <DependentUpon>Game_Edit.cs</DependentUpon>
@@ -296,6 +369,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_Overview.resx">
       <DependentUpon>Game_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Create.resx">
+      <DependentUpon>RuleSet_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Edit.resx">
+      <DependentUpon>RuleSet_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rules_Overview.resx">
+      <DependentUpon>Rules_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rule_Create.resx">
+      <DependentUpon>Rule_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\Rule_Edit.resx">
+      <DependentUpon>Rule_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Users\User_Add.resx">
       <DependentUpon>User_Add.cs</DependentUpon>
@@ -308,6 +396,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Worden\Worden_Overview.resx">
       <DependentUpon>Worden_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\WordSet_Create.resx">
+      <DependentUpon>WordSet_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\WordSet_Edit.resx">
+      <DependentUpon>WordSet_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\Word_Create.resx">
+      <DependentUpon>Word_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\Word_Edit.resx">
+      <DependentUpon>Word_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
