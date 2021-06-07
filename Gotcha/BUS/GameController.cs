@@ -15,11 +15,11 @@ namespace Gotcha.BUS
 
         public List<Game> GetAllGames()
         {
-            return Context.Games.Where(g => g.Maker_Id == new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")).Include(e => e.User).ToList();
+            return Context.Games.Where(g => g.Maker_Id == new Guid(Properties.Settings.Default.UserId)).Include(e => e.User).ToList();
         }
         public List<User> GetUsers()
         {
-            return Context.Users.Where(g => g.Id != new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")).ToList();
+            return Context.Users.Where(g => g.Id != new Guid(Properties.Settings.Default.UserId)).ToList();
         }
         public Game GetGameById(Guid Game_Id)
         {
@@ -88,7 +88,7 @@ namespace Gotcha.BUS
             try
             {
                 game.Id = Guid.NewGuid();
-                game.Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c");
+                game.Maker_Id = new Guid(Properties.Settings.Default.UserId);
                 Context.Games.Add(game);
                 Context.SaveChanges();
 

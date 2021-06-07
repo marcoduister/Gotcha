@@ -82,9 +82,8 @@ namespace Gotcha.BUS
                     Id = Rule_id,
                     Name = Rule,
                     Description = Description,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.Rules.Update(Rulez);
                 Context.SaveChanges();
                 return true;
@@ -103,9 +102,8 @@ namespace Gotcha.BUS
                 {
                     Id = RuleSet_id,
                     Name = Name,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.RuleSets.Update(RuleSet);
                 Context.SaveChanges();
                 return true;
@@ -125,9 +123,8 @@ namespace Gotcha.BUS
                     Id = Guid.NewGuid(),
                     Name = Rule,
                     Description = Description,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.Rules.Add(Rulez);
                 Context.SaveChanges();
                 return true;
@@ -145,9 +142,8 @@ namespace Gotcha.BUS
                 {
                     Id = Guid.NewGuid(),
                     Name = Name,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.RuleSets.Add(RuleSet);
                 Context.SaveChanges();
                 return true; ;
@@ -166,7 +162,6 @@ namespace Gotcha.BUS
                     RuleSet_Id = RuleSet_Id,
                     Rule_Id = Rule_Id,
                 };
-                //Alert hier moet ingeloged gebruiker id nog bij
                 Context.RuleRuleSets.Add(RuleRuleSet);
                 Context.SaveChanges();
                 return true; ;

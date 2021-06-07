@@ -66,7 +66,7 @@ namespace Gotcha.BUS
                     Id = Guid.NewGuid(),
                     Name = Name,
                     Description = description,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
                 //Alert hier moet ingeloged gebruiker id nog bij
                 Context.GameTypes.Add(gameType);
@@ -88,7 +88,7 @@ namespace Gotcha.BUS
                     Id = gameType_id,
                     Name = Name,
                     Description = Description,
-                    Maker_Id = new Guid("6b6ac9b4-ebec-4098-bfd7-af1fa0f79b6c")
+                    Maker_Id = new Guid(Properties.Settings.Default.UserId),
                 };
                 //Alert hier moet ingeloged gebruiker id nog bij
                 Context.GameTypes.Update(gameType);

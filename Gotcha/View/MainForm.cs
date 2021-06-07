@@ -1,4 +1,5 @@
-﻿using Gotcha.View.UserControls.Game;
+﻿using Gotcha.BUS;
+using Gotcha.View.UserControls.Game;
 using Gotcha.View.UserControls.GameTypes;
 using Gotcha.View.UserControls.Rules;
 using Gotcha.View.UserControls.Users;
@@ -17,6 +18,7 @@ namespace Gotcha.View
 {
     public partial class MainForm : Form
     {
+        UserController _UserController = new UserController();
         public MainForm()
         {
             InitializeComponent();
@@ -61,6 +63,14 @@ namespace Gotcha.View
             GameType_Overview uc = new GameType_Overview();
             uc.Dock = DockStyle.Fill;
             panel_Main.Controls.Add(uc);
+        }
+
+        private void uitloggenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Properties.Settings.Default["UserId"] = "";
+            Properties.Settings.Default["UserRol"] = 0;
+            Properties.Settings.Default.Save();
         }
     }
 }
