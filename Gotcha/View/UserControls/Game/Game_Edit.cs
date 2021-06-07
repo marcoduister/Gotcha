@@ -70,13 +70,6 @@ namespace Gotcha.View.UserControls.Game
             comboBox_RuleSet.SelectedIndex = results.Item3.FindIndex(w => w.Id == CurrentGame.RuleSet_Id);
         }
 
-        private void Game_add_Load(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
         private void Btn_UpdateGame_Click(object sender, EventArgs e)
         {
             Models.Game game = new Models.Game()
@@ -102,6 +95,11 @@ namespace Gotcha.View.UserControls.Game
                 MessageBox.Show("Something when wrong please try again!! ");
             }
             
+        }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
