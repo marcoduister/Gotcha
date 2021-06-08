@@ -289,6 +289,12 @@
     <Compile Include="View\UserControls\Rules\Rule_Edit.Designer.cs">
       <DependentUpon>Rule_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Users\CurentUser_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Users\CurentUser_Overview.Designer.cs">
+      <DependentUpon>CurentUser_Overview.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Users\User_Add.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -384,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Rules\Rule_Edit.resx">
       <DependentUpon>Rule_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Users\CurentUser_Overview.resx">
+      <DependentUpon>CurentUser_Overview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Users\User_Add.resx">
       <DependentUpon>User_Add.cs</DependentUpon>

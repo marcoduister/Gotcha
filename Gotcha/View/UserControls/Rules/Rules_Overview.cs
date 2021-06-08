@@ -106,10 +106,8 @@ namespace Gotcha.View.UserControls.Rules
 
             if (dataGridView_Rule.Columns[e.ColumnIndex].Name == "RuleRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                var rule = _RulezController.GetRuleById(Rule_id);
+                MessageBox.Show($"Rule name: {rule.Name} Description: {rule.Description}");
             }
             if (dataGridView_Rule.Columns[e.ColumnIndex].Name == "RuleEdit")
             {
