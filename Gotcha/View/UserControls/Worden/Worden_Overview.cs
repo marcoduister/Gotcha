@@ -106,8 +106,8 @@ namespace Gotcha.View.UserControls.Worden
 
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordRead")
             {
-                //var word = _WordzController.GetWordById(word_id);
-                //MessageBox.Show($"Word: {word.Content}");
+                var word = _WordzController.GetWordById(word_id);
+                MessageBox.Show($"Word: {word}");
             }
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordEdit")
             {

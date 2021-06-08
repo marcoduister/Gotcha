@@ -18,6 +18,15 @@ namespace Gotcha.View.UserControls.Users
         public User_Add()
         {
             InitializeComponent();
+
+            if (Properties.Settings.Default.UserRol != 2)
+            {
+                UserRol.Visible = false;
+                label6.Visible = false;
+                Password.Visible = false;
+                label7.Visible = false;
+            }
+
             UserRol.DataSource = Enum.GetValues(typeof(Enums.Rolen));
         }
 
