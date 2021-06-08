@@ -38,6 +38,7 @@ namespace Gotcha.View.UserControls.Users
             this.Birthdate = new System.Windows.Forms.DateTimePicker();
             this.Email = new System.Windows.Forms.TextBox();
             this.LastName = new System.Windows.Forms.TextBox();
+            this.UpdateCurentUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,10 +115,21 @@ namespace Gotcha.View.UserControls.Users
             this.LastName.Size = new System.Drawing.Size(156, 20);
             this.LastName.TabIndex = 22;
             // 
+            // UpdateCurentUser
+            // 
+            this.UpdateCurentUser.Location = new System.Drawing.Point(408, 269);
+            this.UpdateCurentUser.Name = "UpdateCurentUser";
+            this.UpdateCurentUser.Size = new System.Drawing.Size(151, 38);
+            this.UpdateCurentUser.TabIndex = 29;
+            this.UpdateCurentUser.Text = "Update";
+            this.UpdateCurentUser.UseVisualStyleBackColor = true;
+            this.UpdateCurentUser.Click += new System.EventHandler(this.UpdateCurentUser_Click);
+            // 
             // CurentUser_Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.UpdateCurentUser);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -145,5 +157,6 @@ namespace Gotcha.View.UserControls.Users
         private System.Windows.Forms.DateTimePicker Birthdate;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.Button UpdateCurentUser;
     }
 }

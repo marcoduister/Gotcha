@@ -14,6 +14,7 @@ namespace Gotcha.View.UserControls.Users
 {
     public partial class CurentUser_Overview : UserControl
     {
+        Guid CurentUser = Guid.Parse(Properties.Settings.Default.UserId);
         UserController userController = new UserController();
         public CurentUser_Overview()
         {
@@ -22,12 +23,17 @@ namespace Gotcha.View.UserControls.Users
         }
         private void FillTextBox()
         {
-            User user = userController.GetUser(Guid.Parse(Properties.Settings.Default.UserId));
+            User user = userController.GetUser(CurentUser);
 
             FirstName.Text = user.FirstName;
             LastName.Text = user.LastName;
             Email.Text = user.Email;
             Birthdate.Value = user.Birthdate;
+        }
+
+        private void UpdateCurentUser_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(userController.EditCurentUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, CurentUser));
         }
     }
 }
