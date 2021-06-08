@@ -271,6 +271,12 @@
     <Compile Include="View\UserControls\Rules\RuleSet_Edit.Designer.cs">
       <DependentUpon>RuleSet_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Read.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Read.Designer.cs">
+      <DependentUpon>RuleSet_Read.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -331,6 +337,12 @@
     <Compile Include="View\UserControls\Worden\WordSet_Edit.Designer.cs">
       <DependentUpon>WordSet_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Read.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Read.Designer.cs">
+      <DependentUpon>WordSet_Read.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Worden\Word_Create.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,6 +394,9 @@
     <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Edit.resx">
       <DependentUpon>RuleSet_Edit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Read.resx">
+      <DependentUpon>RuleSet_Read.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Rules\Rules_Overview.resx">
       <DependentUpon>Rules_Overview.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Worden\WordSet_Edit.resx">
       <DependentUpon>WordSet_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\WordSet_Read.resx">
+      <DependentUpon>WordSet_Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Worden\Word_Create.resx">
       <DependentUpon>Word_Create.cs</DependentUpon>

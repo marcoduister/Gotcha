@@ -46,18 +46,20 @@ namespace Gotcha.View.UserControls.Rules
             // 
             // textBox_Name
             // 
-            this.textBox_Name.Location = new System.Drawing.Point(179, 123);
+            this.textBox_Name.Location = new System.Drawing.Point(134, 100);
+            this.textBox_Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_Name.Name = "textBox_Name";
-            this.textBox_Name.Size = new System.Drawing.Size(233, 22);
+            this.textBox_Name.Size = new System.Drawing.Size(176, 20);
             this.textBox_Name.TabIndex = 29;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 125);
+            this.label1.Location = new System.Drawing.Point(49, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "Name";
             // 
@@ -65,9 +67,10 @@ namespace Gotcha.View.UserControls.Rules
             // 
             this.labelRule.AutoSize = true;
             this.labelRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRule.Location = new System.Drawing.Point(58, 42);
+            this.labelRule.Location = new System.Drawing.Point(44, 34);
+            this.labelRule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRule.Name = "labelRule";
-            this.labelRule.Size = new System.Drawing.Size(216, 32);
+            this.labelRule.Size = new System.Drawing.Size(166, 26);
             this.labelRule.TabIndex = 27;
             this.labelRule.Text = "Update RuleSet";
             // 
@@ -78,11 +81,12 @@ namespace Gotcha.View.UserControls.Rules
             this.Id,
             this.Rule,
             this.Delete});
-            this.dataGridView_Rule.Location = new System.Drawing.Point(453, 42);
+            this.dataGridView_Rule.Location = new System.Drawing.Point(340, 34);
+            this.dataGridView_Rule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView_Rule.Name = "dataGridView_Rule";
             this.dataGridView_Rule.RowHeadersWidth = 51;
             this.dataGridView_Rule.RowTemplate.Height = 24;
-            this.dataGridView_Rule.Size = new System.Drawing.Size(395, 210);
+            this.dataGridView_Rule.Size = new System.Drawing.Size(296, 171);
             this.dataGridView_Rule.TabIndex = 32;
             this.dataGridView_Rule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Rule_CellContentClick);
             // 
@@ -115,9 +119,10 @@ namespace Gotcha.View.UserControls.Rules
             // 
             // Btn_UpdateRuleSet
             // 
-            this.Btn_UpdateRuleSet.Location = new System.Drawing.Point(751, 278);
+            this.Btn_UpdateRuleSet.Location = new System.Drawing.Point(563, 226);
+            this.Btn_UpdateRuleSet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_UpdateRuleSet.Name = "Btn_UpdateRuleSet";
-            this.Btn_UpdateRuleSet.Size = new System.Drawing.Size(97, 33);
+            this.Btn_UpdateRuleSet.Size = new System.Drawing.Size(73, 27);
             this.Btn_UpdateRuleSet.TabIndex = 34;
             this.Btn_UpdateRuleSet.Text = "Update";
             this.Btn_UpdateRuleSet.UseVisualStyleBackColor = true;
@@ -125,9 +130,10 @@ namespace Gotcha.View.UserControls.Rules
             // 
             // Btn_Cancel
             // 
-            this.Btn_Cancel.Location = new System.Drawing.Point(625, 278);
+            this.Btn_Cancel.Location = new System.Drawing.Point(469, 226);
+            this.Btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_Cancel.Name = "Btn_Cancel";
-            this.Btn_Cancel.Size = new System.Drawing.Size(97, 33);
+            this.Btn_Cancel.Size = new System.Drawing.Size(73, 27);
             this.Btn_Cancel.TabIndex = 33;
             this.Btn_Cancel.Text = "Cancel";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
@@ -136,16 +142,18 @@ namespace Gotcha.View.UserControls.Rules
             // comboBox_Rule
             // 
             this.comboBox_Rule.FormattingEnabled = true;
-            this.comboBox_Rule.Location = new System.Drawing.Point(179, 171);
+            this.comboBox_Rule.Location = new System.Drawing.Point(134, 139);
+            this.comboBox_Rule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Rule.Name = "comboBox_Rule";
-            this.comboBox_Rule.Size = new System.Drawing.Size(233, 24);
+            this.comboBox_Rule.Size = new System.Drawing.Size(176, 21);
             this.comboBox_Rule.TabIndex = 35;
             // 
             // Btn_AddRule
             // 
-            this.Btn_AddRule.Location = new System.Drawing.Point(315, 219);
+            this.Btn_AddRule.Location = new System.Drawing.Point(236, 178);
+            this.Btn_AddRule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Btn_AddRule.Name = "Btn_AddRule";
-            this.Btn_AddRule.Size = new System.Drawing.Size(97, 33);
+            this.Btn_AddRule.Size = new System.Drawing.Size(73, 27);
             this.Btn_AddRule.TabIndex = 36;
             this.Btn_AddRule.Text = "Add";
             this.Btn_AddRule.UseVisualStyleBackColor = true;
@@ -155,15 +163,16 @@ namespace Gotcha.View.UserControls.Rules
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 175);
+            this.label2.Location = new System.Drawing.Point(49, 142);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 37;
             this.label2.Text = "Rule";
             // 
             // RuleSet_Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_AddRule);
@@ -174,8 +183,9 @@ namespace Gotcha.View.UserControls.Rules
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelRule);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RuleSet_Edit";
-            this.Size = new System.Drawing.Size(910, 337);
+            this.Size = new System.Drawing.Size(682, 274);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Rule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
