@@ -75,10 +75,10 @@ namespace Gotcha.View.UserControls.Worden
 
             if (dataGridView_Wordset.Columns[e.ColumnIndex].Name == "WordSetRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                this.Controls.Clear();
+                WordSet_Read uc = new WordSet_Read(wordSet_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
             }
             if (dataGridView_Wordset.Columns[e.ColumnIndex].Name == "WordSetEdit")
             {
@@ -106,10 +106,8 @@ namespace Gotcha.View.UserControls.Worden
 
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                var word = _WordzController.GetWordById(word_id);
+                MessageBox.Show($"Word: {word}");
             }
             if (dataGridView_Worden.Columns[e.ColumnIndex].Name == "WordEdit")
             {

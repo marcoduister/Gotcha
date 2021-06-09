@@ -39,10 +39,8 @@ namespace Gotcha.View.UserControls.GameTypes
 
             if (dataGridView_GameType.Columns[e.ColumnIndex].Name == "RuleSetRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                var rule = _GameTypeController.GetGameTypeById(GameType_id);
+                MessageBox.Show($"Gametype name: {rule.Name} Description: {rule.Description}");
             }
             if (dataGridView_GameType.Columns[e.ColumnIndex].Name == "RuleSetEdit")
             {

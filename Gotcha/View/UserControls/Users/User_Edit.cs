@@ -21,6 +21,13 @@ namespace Gotcha.View.UserControls.Users
             User_Id = Id;
 
             InitializeComponent();
+
+            if (Properties.Settings.Default.UserRol != 2)
+            {
+                UserRol.Visible = false;
+                label6.Visible = false;
+            }
+
             UserRol.DataSource = Enum.GetValues(typeof(Enums.Rolen));
             FillTextBox();
         }

@@ -275,6 +275,12 @@
     <Compile Include="View\UserControls\Rules\RuleSet_Edit.Designer.cs">
       <DependentUpon>RuleSet_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Read.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Rules\RuleSet_Read.Designer.cs">
+      <DependentUpon>RuleSet_Read.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Rules\Rules_Overview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +298,12 @@
     </Compile>
     <Compile Include="View\UserControls\Rules\Rule_Edit.Designer.cs">
       <DependentUpon>Rule_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Users\CurentUser_Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Users\CurentUser_Overview.Designer.cs">
+      <DependentUpon>CurentUser_Overview.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Users\User_Add.cs">
       <SubType>UserControl</SubType>
@@ -328,6 +340,12 @@
     </Compile>
     <Compile Include="View\UserControls\Worden\WordSet_Edit.Designer.cs">
       <DependentUpon>WordSet_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Read.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Worden\WordSet_Read.Designer.cs">
+      <DependentUpon>WordSet_Read.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\Worden\Word_Create.cs">
       <SubType>UserControl</SubType>
@@ -380,6 +398,9 @@
     <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Edit.resx">
       <DependentUpon>RuleSet_Edit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Rules\RuleSet_Read.resx">
+      <DependentUpon>RuleSet_Read.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Rules\Rules_Overview.resx">
       <DependentUpon>Rules_Overview.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Rules\Rule_Edit.resx">
       <DependentUpon>Rule_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Users\CurentUser_Overview.resx">
+      <DependentUpon>CurentUser_Overview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Users\User_Add.resx">
       <DependentUpon>User_Add.cs</DependentUpon>
@@ -406,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Worden\WordSet_Edit.resx">
       <DependentUpon>WordSet_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Worden\WordSet_Read.resx">
+      <DependentUpon>WordSet_Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Worden\Word_Create.resx">
       <DependentUpon>Word_Create.cs</DependentUpon>

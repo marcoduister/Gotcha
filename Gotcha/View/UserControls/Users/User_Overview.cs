@@ -26,21 +26,25 @@ namespace Gotcha.View.UserControls.Users
 
             foreach (var User in userList)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dataGridView_Users);
-                row.Cells[0].Value = User.Id;
-                row.Cells[1].Value = User.FirstName;
-                row.Cells[2].Value = User.LastName;
-                row.Cells[3].Value = User.Email;
-                row.Cells[4].Value = User.Birthdate;
-                DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
-                row.Cells[5] = btn_Edit;
-                DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                row.Cells[6] = btn_Delete;
-                //DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
-                //row.Cells[7] = btn_Read;
+                if (User.Id != new Guid(Properties.Settings.Default.UserId))
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dataGridView_Users);
+                    row.Cells[0].Value = User.Id;
+                    row.Cells[1].Value = User.FirstName;
+                    row.Cells[2].Value = User.LastName;
+                    row.Cells[3].Value = User.Email;
+                    row.Cells[4].Value = User.Birthdate;
+                    DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
+                    row.Cells[5] = btn_Edit;
+                    DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
+                    row.Cells[6] = btn_Delete;
+                    //DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
+                    //row.Cells[7] = btn_Read;
 
-                dataGridView_Users.Rows.Add(row);
+                    dataGridView_Users.Rows.Add(row);
+                }
+
             }
         }
 

@@ -72,5 +72,13 @@ namespace Gotcha.View
             Properties.Settings.Default["UserRol"] = 0;
             Properties.Settings.Default.Save();
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            CurentUser_Overview uc = new CurentUser_Overview();
+            uc.Dock = DockStyle.Fill;
+            panel_Main.Controls.Add(uc);
+        }
     }
 }

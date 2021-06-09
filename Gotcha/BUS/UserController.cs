@@ -126,5 +126,23 @@ namespace Gotcha.BUS
                 return null;
             }
         }
+
+        public string EditCurentUser(string FirstName, string LastName, string Email, DateTime Birthdate, Guid Id)
+        {
+            User user = new User();
+
+            user.Id = Id;
+            user.FirstName = FirstName;
+            user.LastName = LastName;
+            user.Email = Email;
+            user.Birthdate = Birthdate;
+            user.UserActive = true;
+
+            DBContext.Users.Add(user);
+            DBContext.Entry(user).State = EntityState.Modified;
+            DBContext.SaveChanges();
+
+            return "Your data has been updated.";
+        }
     }
 }

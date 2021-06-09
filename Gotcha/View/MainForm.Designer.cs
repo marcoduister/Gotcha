@@ -44,10 +44,10 @@ namespace Gotcha.View
             // panel_Main
             // 
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Main.Location = new System.Drawing.Point(178, 0);
-            this.panel_Main.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Main.Location = new System.Drawing.Point(144, 0);
+            this.panel_Main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(994, 554);
+            this.panel_Main.Size = new System.Drawing.Size(735, 450);
             this.panel_Main.TabIndex = 2;
             // 
             // Menu
@@ -66,43 +66,43 @@ namespace Gotcha.View
             this.Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.Menu.Size = new System.Drawing.Size(178, 554);
+            this.Menu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.Menu.Size = new System.Drawing.Size(144, 450);
             this.Menu.TabIndex = 3;
             this.Menu.Text = "Menu";
             // 
             // gameToolStripMenuItem
             // 
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.gameToolStripMenuItem.Text = "Game";
             this.gameToolStripMenuItem.Click += new System.EventHandler(this.gameToolStripMenuItem_Click);
             // 
             // rulesToolStripMenuItem
             // 
             this.rulesToolStripMenuItem.Name = "rulesToolStripMenuItem";
-            this.rulesToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.rulesToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.rulesToolStripMenuItem.Text = "Rules";
             this.rulesToolStripMenuItem.Click += new System.EventHandler(this.rulesToolStripMenuItem_Click);
             // 
             // wordenToolStripMenuItem
             // 
             this.wordenToolStripMenuItem.Name = "wordenToolStripMenuItem";
-            this.wordenToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.wordenToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.wordenToolStripMenuItem.Text = "Worden";
             this.wordenToolStripMenuItem.Click += new System.EventHandler(this.wordenToolStripMenuItem_Click);
             // 
             // gameTypeToolStripMenuItem
             // 
             this.gameTypeToolStripMenuItem.Name = "gameTypeToolStripMenuItem";
-            this.gameTypeToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.gameTypeToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.gameTypeToolStripMenuItem.Text = "GameType";
             this.gameTypeToolStripMenuItem.Click += new System.EventHandler(this.gameTypeToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -110,25 +110,26 @@ namespace Gotcha.View
             // 
             this.accountToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 170, 0, 0);
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // uitloggenToolStripMenuItem
             // 
             this.uitloggenToolStripMenuItem.Name = "uitloggenToolStripMenuItem";
-            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(167, 45);
+            this.uitloggenToolStripMenuItem.Size = new System.Drawing.Size(135, 36);
             this.uitloggenToolStripMenuItem.Text = "Uitloggen";
             this.uitloggenToolStripMenuItem.Click += new System.EventHandler(this.uitloggenToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 554);
+            this.ClientSize = new System.Drawing.Size(879, 450);
             this.Controls.Add(this.panel_Main);
             this.Controls.Add(this.Menu);
             this.MainMenuStrip = this.Menu;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Menu.ResumeLayout(false);
