@@ -14,7 +14,6 @@ namespace Gotcha.Models
         public DateTime? StartTime { get; set; }
         public DateTime? EindTime { get; set; }
         public string Location { get; set; }
-        public int? MaxPlayers { get; set; }
         public Guid? RandomWiner { get; set; }
         public Guid? BestKill { get; set; }
         public Boolean Archived { get; set; }

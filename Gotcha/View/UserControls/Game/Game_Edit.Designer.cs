@@ -36,13 +36,15 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Location = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_gameUsers = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Btn_UpdateGame = new System.Windows.Forms.Button();
             this.Btn_addUser = new System.Windows.Forms.Button();
             this.comboBox_User = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox_Winner = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_Second = new System.Windows.Forms.TextBox();
@@ -51,7 +53,6 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Most = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox_random = new System.Windows.Forms.TextBox();
             this.comboBox_best = new System.Windows.Forms.ComboBox();
             this.comboBox_RuleSet = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,10 +65,8 @@ namespace Gotcha.View.UserControls.Game
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxActivePlayer = new System.Windows.Forms.TextBox();
             this.textBox_Game_id = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Kill = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.comboBox_Random = new System.Windows.Forms.ComboBox();
+            this.Btn_archiveGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +140,40 @@ namespace Gotcha.View.UserControls.Game
             this.dataGridView_gameUsers.TabIndex = 8;
             this.dataGridView_gameUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_gameUsers_CellContentClick);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // User
+            // 
+            this.User.HeaderText = "User";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            this.User.Width = 125;
+            // 
+            // btn_Kill
+            // 
+            this.btn_Kill.HeaderText = "Kill";
+            this.btn_Kill.MinimumWidth = 6;
+            this.btn_Kill.Name = "btn_Kill";
+            this.btn_Kill.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Kill.Width = 125;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.HeaderText = "Delete";
+            this.btn_Delete.MinimumWidth = 6;
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseColumnTextForButtonValue = true;
+            this.btn_Delete.Width = 125;
+            // 
             // Btn_Cancel
             // 
             this.Btn_Cancel.Location = new System.Drawing.Point(646, 499);
@@ -174,38 +207,20 @@ namespace Gotcha.View.UserControls.Game
             // comboBox_User
             // 
             this.comboBox_User.FormattingEnabled = true;
-            this.comboBox_User.Location = new System.Drawing.Point(631, 453);
+            this.comboBox_User.Location = new System.Drawing.Point(473, 453);
             this.comboBox_User.Name = "comboBox_User";
-            this.comboBox_User.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_User.Size = new System.Drawing.Size(279, 24);
             this.comboBox_User.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(627, 420);
+            this.label5.Location = new System.Drawing.Point(469, 423);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 13;
             this.label5.Text = "User";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(469, 420);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Class";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(473, 453);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 14;
             // 
             // textBox_Winner
             // 
@@ -275,19 +290,11 @@ namespace Gotcha.View.UserControls.Game
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(144, 328);
+            this.label11.Location = new System.Drawing.Point(144, 325);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "Random";
-            // 
-            // textBox_random
-            // 
-            this.textBox_random.Location = new System.Drawing.Point(148, 352);
-            this.textBox_random.Name = "textBox_random";
-            this.textBox_random.ReadOnly = true;
-            this.textBox_random.Size = new System.Drawing.Size(100, 22);
-            this.textBox_random.TabIndex = 24;
             // 
             // comboBox_best
             // 
@@ -393,47 +400,31 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Game_id.TabIndex = 37;
             this.textBox_Game_id.Visible = false;
             // 
-            // Id
+            // comboBox_Random
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            this.comboBox_Random.FormattingEnabled = true;
+            this.comboBox_Random.Location = new System.Drawing.Point(148, 350);
+            this.comboBox_Random.Name = "comboBox_Random";
+            this.comboBox_Random.Size = new System.Drawing.Size(100, 24);
+            this.comboBox_Random.TabIndex = 38;
             // 
-            // User
+            // Btn_archiveGame
             // 
-            this.User.HeaderText = "User";
-            this.User.MinimumWidth = 6;
-            this.User.Name = "User";
-            this.User.Width = 125;
-            // 
-            // btn_Kill
-            // 
-            this.btn_Kill.HeaderText = "Kill";
-            this.btn_Kill.MinimumWidth = 6;
-            this.btn_Kill.Name = "btn_Kill";
-            this.btn_Kill.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_Kill.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btn_Kill.Text = "Kill";
-            this.btn_Kill.UseColumnTextForButtonValue = true;
-            this.btn_Kill.Width = 125;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.HeaderText = "Delete";
-            this.btn_Delete.MinimumWidth = 6;
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btn_Delete.Text = "Delete";
-            this.btn_Delete.UseColumnTextForButtonValue = true;
-            this.btn_Delete.Width = 125;
+            this.Btn_archiveGame.Location = new System.Drawing.Point(534, 499);
+            this.Btn_archiveGame.Name = "Btn_archiveGame";
+            this.Btn_archiveGame.Size = new System.Drawing.Size(97, 33);
+            this.Btn_archiveGame.TabIndex = 39;
+            this.Btn_archiveGame.Text = "Archive";
+            this.Btn_archiveGame.UseVisualStyleBackColor = true;
+            this.Btn_archiveGame.Visible = false;
+            this.Btn_archiveGame.Click += new System.EventHandler(this.Btn_archiveGame_Click);
             // 
             // Game_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Btn_archiveGame);
+            this.Controls.Add(this.comboBox_Random);
             this.Controls.Add(this.textBox_Game_id);
             this.Controls.Add(this.textBoxActivePlayer);
             this.Controls.Add(this.label15);
@@ -447,7 +438,6 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.comboBox_RuleSet);
             this.Controls.Add(this.comboBox_best);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox_random);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox_Most);
             this.Controls.Add(this.label10);
@@ -455,8 +445,6 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.textBox_Second);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox_Winner);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox_User);
             this.Controls.Add(this.Btn_addUser);
@@ -491,8 +479,6 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.Button Btn_addUser;
         private System.Windows.Forms.ComboBox comboBox_User;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox_Winner;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_Second;
@@ -501,7 +487,6 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.TextBox textBox_Most;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox_random;
         private System.Windows.Forms.ComboBox comboBox_best;
         private System.Windows.Forms.ComboBox comboBox_RuleSet;
         private System.Windows.Forms.Label label12;
@@ -516,7 +501,9 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.TextBox textBox_Game_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_Kill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn btn_Kill;
         private System.Windows.Forms.DataGridViewButtonColumn btn_Delete;
+        private System.Windows.Forms.ComboBox comboBox_Random;
+        private System.Windows.Forms.Button Btn_archiveGame;
     }
 }

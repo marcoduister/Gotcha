@@ -197,6 +197,10 @@
     <Compile Include="Migrations\20210604215732_addNameToword.designer.cs">
       <DependentUpon>20210604215732_addNameToword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20210608165020_removemaxusers.cs" />
+    <Compile Include="Migrations\20210608165020_removemaxusers.designer.cs">
+      <DependentUpon>20210608165020_removemaxusers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Gotcha_DBcontextModelSnapshot.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Game.cs" />

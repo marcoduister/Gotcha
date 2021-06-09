@@ -31,25 +31,24 @@ namespace Gotcha.View.UserControls.Game
                 row.CreateCells(dataGridView_Games);
                 row.Cells[0].Value = Game.Id;
                 row.Cells[1].Value = Game.Name;
-                row.Cells[2].Value = Game.MaxPlayers;
-                row.Cells[3].Value = Game.StartTime;
-                row.Cells[4].Value = Game.Location;
-                row.Cells[5].Value = Game.User.FirstName+" "+Game.User.LastName;
+                row.Cells[2].Value = Game.StartTime;
+                row.Cells[3].Value = Game.Location;
+                row.Cells[4].Value = Game.User.FirstName+" "+Game.User.LastName;
                 if (Game.StartTime == null && !Game.Archived)
                 {
                     DataGridViewButtonCell btn_Start = new DataGridViewButtonCell() { Value = "Start" };
-                    row.Cells[6] = btn_Start;
+                    row.Cells[5] = btn_Start;
                 }
                 if (!Game.Archived)
                 {
                     DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
-                    row.Cells[8] = btn_Edit;
+                    row.Cells[7] = btn_Edit;
                     DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                    row.Cells[9] = btn_Delete;
+                    row.Cells[8] = btn_Delete;
                 }
                 
                 DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
-                row.Cells[7] = btn_Read;
+                row.Cells[6] = btn_Read;
                 
                 dataGridView_Games.Rows.Add(row);
             }
