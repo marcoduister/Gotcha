@@ -79,10 +79,8 @@ namespace Gotcha.View.UserControls.Game
             }
             if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                var Game = _GameController.GetGameById(Game_id);
+                MessageBox.Show($"Game name: {Game.Name} StartTime: {Game.StartTime} EndTime: {Game.EindTime} Location: {Game.Location}");
             }
             if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnedit")
             {
