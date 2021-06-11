@@ -49,7 +49,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<WordSet> List = Context.WordSets.Include(i => i.User).ToList();
+                List<WordSet> List = Context.WordSets.AsNoTracking().Include(i => i.User).ToList();
 
                 return List;
             }
@@ -62,7 +62,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<Word> List = Context.Words.Include(i => i.User).ToList();
+                List<Word> List = Context.Words.AsNoTracking().Include(i => i.User).ToList();
 
                 return List;
             }
@@ -173,7 +173,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                Word DeleteWord = Context.Words.Include(i=>i.WordWordset).First(f => f.Id == word_id);
+                Word DeleteWord = Context.Words.AsNoTracking().Include(i=>i.WordWordset).First(f => f.Id == word_id);
                 Context.Remove(DeleteWord);
                 Context.SaveChanges();
 
@@ -189,7 +189,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                WordSet DeletewordSet = Context.WordSets.Include(i => i.Games).Include(i => i.WordWordset).First(f => f.Id == wordSet_id);
+                WordSet DeletewordSet = Context.WordSets.AsNoTracking().Include(i => i.Games).AsNoTracking().Include(i => i.WordWordset).AsNoTracking().First(f => f.Id == wordSet_id);
                 Context.Remove(DeletewordSet);
                 Context.SaveChanges();
 
@@ -204,7 +204,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                WordWordset WordwordSet = Context.WordWordsets.First(f => f.Word_Id == word_Id && f.WordSet_Id == WordSet_Id);
+                WordWordset WordwordSet = Context.WordWordsets.AsNoTracking().First(f => f.Word_Id == word_Id && f.WordSet_Id == WordSet_Id);
                 Context.Remove(WordwordSet);
                 Context.SaveChanges();
 

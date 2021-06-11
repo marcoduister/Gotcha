@@ -28,7 +28,5 @@ namespace Gotcha.Models
         public virtual GameType GameType { get; set; }
         public virtual WordSet WordSet { get; set; }
         public List<Contract> Contracts { get; set; }
-
-
     }
 }

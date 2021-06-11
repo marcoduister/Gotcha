@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Gotcha.BUS
 {
     class GameController
@@ -23,7 +24,7 @@ namespace Gotcha.BUS
         }
         public Game GetGameById(Guid Game_Id)
         {
-            return Context.Games.AsNoTracking().Include(e => e.Contracts).ThenInclude(th =>th.User).AsNoTracking().Where(g => g.Id == Game_Id).First();
+            return Context.Games.AsNoTracking().Include(e => e.Contracts).ThenInclude(e => e.User).AsNoTracking().Where(g => g.Id == Game_Id).First();
         }
 
         internal List<Contract> GetcontractsByGameId(Guid Game_Id)
@@ -34,9 +35,9 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<GameType> gameTypeList = Context.GameTypes.ToList();
-                List<WordSet> wordSetsList = Context.WordSets.ToList();
-                List<RuleSet> ruleSetsList = Context.RuleSets.ToList();
+                List<GameType> gameTypeList = Context.GameTypes.AsNoTracking().ToList();
+                List<WordSet> wordSetsList = Context.WordSets.AsNoTracking().ToList();
+                List<RuleSet> ruleSetsList = Context.RuleSets.AsNoTracking().ToList();
 
                 return (wordSetsList, gameTypeList, ruleSetsList);
             }
@@ -46,20 +47,16 @@ namespace Gotcha.BUS
             }
         }
 
-        public void Read()
-        {
-            
-        }
-
         public bool AddContractUser(Guid User_Id, Guid Game_Id)
         {
             try
             {
-                Game game = GetGameById(Game_Id);
+
+                Game game = Context.Games.AsNoTracking().First(e => e.Id == Game_Id);
                 Contract contract = new Contract();
                 if (game.WordSet_Id != null)
                 {
-                    List<WordWordset> WordenList = Context.WordWordsets.Include(i =>i.Word).Where(w => w.WordSet_Id == game.WordSet_Id).ToList();
+                    List<WordWordset> WordenList = Context.WordWordsets.AsNoTracking().Include(i =>i.Word).Where(w => w.WordSet_Id == game.WordSet_Id).ToList();
                     // Allert - hier moet ngo naar gekeken worden hij maakt nu een nieuwe guid aan maar er moet gekeken worden dat die een random wordt kiest van de worden set
                     contract.Word_Id = Guid.NewGuid();
                 }
@@ -82,6 +79,7 @@ namespace Gotcha.BUS
         {
             try
             {
+                Game.Contracts = null;
                 Game.Maker_Id = new Guid(Properties.Settings.Default.UserId);
                 Context.Games.Update(Game);
                 Context.SaveChanges();
@@ -133,7 +131,18 @@ namespace Gotcha.BUS
         {
             try
             {
-                Game StartGame = Context.Games.First(e => e.Id == Game_Id);
+                Game StartGame = Context.Games.Include(e =>e.Contracts).First(e => e.Id == Game_Id);
+                if (StartGame.WordSet_Id != null)
+                {
+                    List<Word> WordenList = Context.WordWordsets.Include(e => e.Word).Where(e => e.WordSet_Id == StartGame.WordSet_Id).Select(e => e.Word).ToList();
+                    Random random = new Random();
+                    foreach (var contract in StartGame.Contracts)
+                    {
+                        int Wordindex = random.Next(WordenList.Count);
+                        contract.Word_Id = WordenList[Wordindex].Id;
+                    }
+                }
+
                 StartGame.StartTime = DateTime.Now;
                 Context.Update(StartGame);
                 Context.SaveChanges();
@@ -151,7 +160,8 @@ namespace Gotcha.BUS
             try
             {
                 Game DeleteGame = Context.Games.Include(i => i.Contracts)
-                    .First(e => e.Archived == false && e.StartTime == null && e.Id == Game_Id);
+                    .Where(e => e.Id == Game_Id)
+                    .FirstOrDefault();
                 Context.Remove(DeleteGame);
                 Context.SaveChanges();
 
@@ -178,7 +188,7 @@ namespace Gotcha.BUS
                 return false;
             }
         }
-
+        //this function kills the player 
         internal bool KillContract(Guid user_id, Guid Game_Id)
         {
             try

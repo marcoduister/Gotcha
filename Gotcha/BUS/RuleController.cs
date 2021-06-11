@@ -13,10 +13,6 @@ namespace Gotcha.BUS
     {
         private Gotcha_DBcontext Context = new Gotcha_DBcontext();
 
-        public RuleController()
-        {
-
-        }
 
         internal Rule GetRuleById(Guid Rule_id)
         {
@@ -50,7 +46,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<RuleSet> List = Context.RuleSets.Include(i => i.User).ToList();
+                List<RuleSet> List = Context.RuleSets.AsNoTracking().Include(i => i.User).ToList();
 
                 return List;
             }
@@ -63,7 +59,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<Rule> List = Context.Rules.Include(i => i.User).ToList();
+                List<Rule> List = Context.Rules.AsNoTracking().Include(i => i.User).ToList();
 
                 return List;
             }
@@ -192,7 +188,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                RuleSet DeleteRuleSet = Context.RuleSets.Include(i => i.Games).Include(i => i.RuleRuleSet).First(f => f.Id == RuleSet_id);
+                RuleSet DeleteRuleSet = Context.RuleSets.AsNoTracking().Include(i => i.Games).AsNoTracking().Include(i => i.RuleRuleSet).AsNoTracking().First(f => f.Id == RuleSet_id);
                 Context.Remove(DeleteRuleSet);
                 Context.SaveChanges();
 
@@ -207,7 +203,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                RuleRuleSet RuleRuleSet = Context.RuleRuleSets.First(f => f.Rule_Id == Rule_Id && f.RuleSet_Id == RuleSet_Id);
+                RuleRuleSet RuleRuleSet = Context.RuleRuleSets.AsNoTracking().First(f => f.Rule_Id == Rule_Id && f.RuleSet_Id == RuleSet_Id);
                 Context.Remove(RuleRuleSet);
                 Context.SaveChanges();
 

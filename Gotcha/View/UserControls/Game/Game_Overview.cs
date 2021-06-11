@@ -43,10 +43,11 @@ namespace Gotcha.View.UserControls.Game
                 {
                     DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
                     row.Cells[7] = btn_Edit;
-                    DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                    row.Cells[8] = btn_Delete;
+
                 }
-                
+                DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
+                row.Cells[8] = btn_Delete;
+
                 DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
                 row.Cells[6] = btn_Read;
                 

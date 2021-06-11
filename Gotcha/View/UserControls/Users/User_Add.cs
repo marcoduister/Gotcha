@@ -32,7 +32,23 @@ namespace Gotcha.View.UserControls.Users
 
         private void CreateUser_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(userController.AddUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, UserRol.SelectedIndex, Password.Text));
+            if (userController.AddUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, UserRol.SelectedIndex, Password.Text))
+            {
+                MessageBox.Show("you have create a user to upload a profile image go to Edit or account");
+                Btn_Cancel_Click(null, null);
+            }
+            else
+            {
+                MessageBox.Show("this user already exist or try later again");
+            }
+        }
+
+        private void Btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            User_Overview uc = new User_Overview();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
         }
     }
 }

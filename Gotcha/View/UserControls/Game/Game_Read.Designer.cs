@@ -1,7 +1,7 @@
 ﻿
 namespace Gotcha.View.UserControls.Game
 {
-    partial class Game_Edit
+    partial class Game_Read
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,11 +36,11 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Location = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView_gameUsers = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_Cancel = new System.Windows.Forms.Button();
-            this.Btn_UpdateGame = new System.Windows.Forms.Button();
-            this.Btn_addUser = new System.Windows.Forms.Button();
-            this.comboBox_User = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBox_Winner = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_Second = new System.Windows.Forms.TextBox();
@@ -49,24 +49,18 @@ namespace Gotcha.View.UserControls.Game
             this.textBox_Most = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox_best = new System.Windows.Forms.ComboBox();
-            this.comboBox_RuleSet = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox_WordSet = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox_GameType = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_End = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_Start = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxActivePlayer = new System.Windows.Forms.TextBox();
-            this.textBox_Game_id = new System.Windows.Forms.TextBox();
-            this.comboBox_Random = new System.Windows.Forms.ComboBox();
-            this.Btn_archiveGame = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox_Random = new System.Windows.Forms.TextBox();
+            this.TextBox_Best = new System.Windows.Forms.MaskedTextBox();
+            this.textBox_gameType = new System.Windows.Forms.TextBox();
+            this.textBox_ruleset = new System.Windows.Forms.TextBox();
+            this.textBox_wordset = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +98,7 @@ namespace Gotcha.View.UserControls.Game
             // 
             this.textBox_Name.Location = new System.Drawing.Point(148, 41);
             this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.ReadOnly = true;
             this.textBox_Name.Size = new System.Drawing.Size(233, 22);
             this.textBox_Name.TabIndex = 3;
             // 
@@ -111,6 +106,7 @@ namespace Gotcha.View.UserControls.Game
             // 
             this.textBox_Location.Location = new System.Drawing.Point(148, 81);
             this.textBox_Location.Name = "textBox_Location";
+            this.textBox_Location.ReadOnly = true;
             this.textBox_Location.Size = new System.Drawing.Size(233, 22);
             this.textBox_Location.TabIndex = 4;
             // 
@@ -130,63 +126,54 @@ namespace Gotcha.View.UserControls.Game
             this.dataGridView_gameUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.User,
-            this.btn_Kill,
-            this.btn_Delete});
+            this.word,
+            this.btn_Kill});
             this.dataGridView_gameUsers.Location = new System.Drawing.Point(473, 43);
             this.dataGridView_gameUsers.Name = "dataGridView_gameUsers";
             this.dataGridView_gameUsers.RowHeadersWidth = 51;
             this.dataGridView_gameUsers.RowTemplate.Height = 24;
             this.dataGridView_gameUsers.Size = new System.Drawing.Size(396, 365);
             this.dataGridView_gameUsers.TabIndex = 8;
-            this.dataGridView_gameUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_gameUsers_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // User
+            // 
+            this.User.HeaderText = "User";
+            this.User.MinimumWidth = 6;
+            this.User.Name = "User";
+            this.User.Width = 125;
+            // 
+            // word
+            // 
+            this.word.HeaderText = "word";
+            this.word.MinimumWidth = 6;
+            this.word.Name = "word";
+            this.word.Width = 125;
+            // 
+            // btn_Kill
+            // 
+            this.btn_Kill.HeaderText = "Killed";
+            this.btn_Kill.MinimumWidth = 6;
+            this.btn_Kill.Name = "btn_Kill";
+            this.btn_Kill.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btn_Kill.Width = 125;
             // 
             // Btn_Cancel
             // 
-            this.Btn_Cancel.Location = new System.Drawing.Point(646, 499);
+            this.Btn_Cancel.Location = new System.Drawing.Point(772, 443);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(97, 33);
             this.Btn_Cancel.TabIndex = 9;
             this.Btn_Cancel.Text = "Cancel";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
-            // 
-            // Btn_UpdateGame
-            // 
-            this.Btn_UpdateGame.Location = new System.Drawing.Point(772, 499);
-            this.Btn_UpdateGame.Name = "Btn_UpdateGame";
-            this.Btn_UpdateGame.Size = new System.Drawing.Size(97, 33);
-            this.Btn_UpdateGame.TabIndex = 10;
-            this.Btn_UpdateGame.Text = "Update";
-            this.Btn_UpdateGame.UseVisualStyleBackColor = true;
-            this.Btn_UpdateGame.Click += new System.EventHandler(this.Btn_UpdateGame_Click);
-            // 
-            // Btn_addUser
-            // 
-            this.Btn_addUser.Location = new System.Drawing.Point(772, 448);
-            this.Btn_addUser.Name = "Btn_addUser";
-            this.Btn_addUser.Size = new System.Drawing.Size(97, 33);
-            this.Btn_addUser.TabIndex = 11;
-            this.Btn_addUser.Text = "Add";
-            this.Btn_addUser.UseVisualStyleBackColor = true;
-            this.Btn_addUser.Click += new System.EventHandler(this.Btn_addUser_Click);
-            // 
-            // comboBox_User
-            // 
-            this.comboBox_User.FormattingEnabled = true;
-            this.comboBox_User.Location = new System.Drawing.Point(473, 453);
-            this.comboBox_User.Name = "comboBox_User";
-            this.comboBox_User.Size = new System.Drawing.Size(279, 24);
-            this.comboBox_User.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(469, 423);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "User";
             // 
             // textBox_Winner
             // 
@@ -262,22 +249,6 @@ namespace Gotcha.View.UserControls.Game
             this.label11.TabIndex = 25;
             this.label11.Text = "Random";
             // 
-            // comboBox_best
-            // 
-            this.comboBox_best.FormattingEnabled = true;
-            this.comboBox_best.Location = new System.Drawing.Point(148, 299);
-            this.comboBox_best.Name = "comboBox_best";
-            this.comboBox_best.Size = new System.Drawing.Size(100, 24);
-            this.comboBox_best.TabIndex = 26;
-            // 
-            // comboBox_RuleSet
-            // 
-            this.comboBox_RuleSet.FormattingEnabled = true;
-            this.comboBox_RuleSet.Location = new System.Drawing.Point(148, 384);
-            this.comboBox_RuleSet.Name = "comboBox_RuleSet";
-            this.comboBox_RuleSet.Size = new System.Drawing.Size(233, 24);
-            this.comboBox_RuleSet.TabIndex = 27;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -298,14 +269,6 @@ namespace Gotcha.View.UserControls.Game
             this.label13.TabIndex = 30;
             this.label13.Text = "WordSet";
             // 
-            // comboBox_WordSet
-            // 
-            this.comboBox_WordSet.FormattingEnabled = true;
-            this.comboBox_WordSet.Location = new System.Drawing.Point(148, 423);
-            this.comboBox_WordSet.Name = "comboBox_WordSet";
-            this.comboBox_WordSet.Size = new System.Drawing.Size(233, 24);
-            this.comboBox_WordSet.TabIndex = 29;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -315,14 +278,6 @@ namespace Gotcha.View.UserControls.Game
             this.label14.Size = new System.Drawing.Size(90, 20);
             this.label14.TabIndex = 32;
             this.label14.Text = "GameType";
-            // 
-            // comboBox_GameType
-            // 
-            this.comboBox_GameType.FormattingEnabled = true;
-            this.comboBox_GameType.Location = new System.Drawing.Point(148, 467);
-            this.comboBox_GameType.Name = "comboBox_GameType";
-            this.comboBox_GameType.Size = new System.Drawing.Size(233, 24);
-            this.comboBox_GameType.TabIndex = 31;
             // 
             // dateTimePicker_End
             // 
@@ -358,82 +313,62 @@ namespace Gotcha.View.UserControls.Game
             this.textBoxActivePlayer.Size = new System.Drawing.Size(233, 22);
             this.textBoxActivePlayer.TabIndex = 36;
             // 
-            // textBox_Game_id
+            // textBox_Random
             // 
-            this.textBox_Game_id.Location = new System.Drawing.Point(473, 504);
-            this.textBox_Game_id.Name = "textBox_Game_id";
-            this.textBox_Game_id.Size = new System.Drawing.Size(55, 22);
-            this.textBox_Game_id.TabIndex = 37;
-            this.textBox_Game_id.Visible = false;
+            this.textBox_Random.Location = new System.Drawing.Point(148, 348);
+            this.textBox_Random.Name = "textBox_Random";
+            this.textBox_Random.ReadOnly = true;
+            this.textBox_Random.Size = new System.Drawing.Size(100, 22);
+            this.textBox_Random.TabIndex = 39;
             // 
-            // comboBox_Random
+            // TextBox_Best
             // 
-            this.comboBox_Random.FormattingEnabled = true;
-            this.comboBox_Random.Location = new System.Drawing.Point(148, 350);
-            this.comboBox_Random.Name = "comboBox_Random";
-            this.comboBox_Random.Size = new System.Drawing.Size(100, 24);
-            this.comboBox_Random.TabIndex = 38;
+            this.TextBox_Best.Location = new System.Drawing.Point(148, 301);
+            this.TextBox_Best.Name = "TextBox_Best";
+            this.TextBox_Best.ReadOnly = true;
+            this.TextBox_Best.Size = new System.Drawing.Size(100, 22);
+            this.TextBox_Best.TabIndex = 40;
             // 
-            // Btn_archiveGame
+            // textBox_gameType
             // 
-            this.Btn_archiveGame.Location = new System.Drawing.Point(534, 499);
-            this.Btn_archiveGame.Name = "Btn_archiveGame";
-            this.Btn_archiveGame.Size = new System.Drawing.Size(97, 33);
-            this.Btn_archiveGame.TabIndex = 39;
-            this.Btn_archiveGame.Text = "Archive";
-            this.Btn_archiveGame.UseVisualStyleBackColor = true;
-            this.Btn_archiveGame.Visible = false;
-            this.Btn_archiveGame.Click += new System.EventHandler(this.Btn_archiveGame_Click);
+            this.textBox_gameType.Location = new System.Drawing.Point(148, 467);
+            this.textBox_gameType.Name = "textBox_gameType";
+            this.textBox_gameType.ReadOnly = true;
+            this.textBox_gameType.Size = new System.Drawing.Size(233, 22);
+            this.textBox_gameType.TabIndex = 41;
             // 
-            // Id
+            // textBox_ruleset
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            this.textBox_ruleset.Location = new System.Drawing.Point(148, 384);
+            this.textBox_ruleset.Name = "textBox_ruleset";
+            this.textBox_ruleset.ReadOnly = true;
+            this.textBox_ruleset.Size = new System.Drawing.Size(233, 22);
+            this.textBox_ruleset.TabIndex = 42;
             // 
-            // User
+            // textBox_wordset
             // 
-            this.User.HeaderText = "User";
-            this.User.MinimumWidth = 6;
-            this.User.Name = "User";
-            this.User.Width = 125;
+            this.textBox_wordset.Location = new System.Drawing.Point(148, 423);
+            this.textBox_wordset.Name = "textBox_wordset";
+            this.textBox_wordset.ReadOnly = true;
+            this.textBox_wordset.Size = new System.Drawing.Size(233, 22);
+            this.textBox_wordset.TabIndex = 43;
             // 
-            // btn_Kill
-            // 
-            this.btn_Kill.HeaderText = "Kill";
-            this.btn_Kill.MinimumWidth = 6;
-            this.btn_Kill.Name = "btn_Kill";
-            this.btn_Kill.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_Kill.Width = 125;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.HeaderText = "Delete";
-            this.btn_Delete.MinimumWidth = 6;
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btn_Delete.Width = 125;
-            // 
-            // Game_Edit
+            // Game_Read
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Btn_archiveGame);
-            this.Controls.Add(this.comboBox_Random);
-            this.Controls.Add(this.textBox_Game_id);
+            this.Controls.Add(this.textBox_wordset);
+            this.Controls.Add(this.textBox_ruleset);
+            this.Controls.Add(this.textBox_gameType);
+            this.Controls.Add(this.TextBox_Best);
+            this.Controls.Add(this.textBox_Random);
             this.Controls.Add(this.textBoxActivePlayer);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dateTimePicker_Start);
             this.Controls.Add(this.dateTimePicker_End);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.comboBox_GameType);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox_WordSet);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox_RuleSet);
-            this.Controls.Add(this.comboBox_best);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox_Most);
@@ -442,10 +377,6 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.textBox_Second);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox_Winner);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox_User);
-            this.Controls.Add(this.Btn_addUser);
-            this.Controls.Add(this.Btn_UpdateGame);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.dataGridView_gameUsers);
             this.Controls.Add(this.label4);
@@ -454,7 +385,7 @@ namespace Gotcha.View.UserControls.Game
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Game_Edit";
+            this.Name = "Game_Read";
             this.Size = new System.Drawing.Size(910, 545);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).EndInit();
             this.ResumeLayout(false);
@@ -472,10 +403,6 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView_gameUsers;
         private System.Windows.Forms.Button Btn_Cancel;
-        private System.Windows.Forms.Button Btn_UpdateGame;
-        private System.Windows.Forms.Button Btn_addUser;
-        private System.Windows.Forms.ComboBox comboBox_User;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_Winner;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_Second;
@@ -484,23 +411,21 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.TextBox textBox_Most;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox_best;
-        private System.Windows.Forms.ComboBox comboBox_RuleSet;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox_WordSet;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox_GameType;
         private System.Windows.Forms.DateTimePicker dateTimePicker_End;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Start;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxActivePlayer;
-        private System.Windows.Forms.TextBox textBox_Game_id;
-        private System.Windows.Forms.ComboBox comboBox_Random;
-        private System.Windows.Forms.Button Btn_archiveGame;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
+        private System.Windows.Forms.DataGridViewTextBoxColumn word;
         private System.Windows.Forms.DataGridViewTextBoxColumn btn_Kill;
-        private System.Windows.Forms.DataGridViewTextBoxColumn btn_Delete;
+        private System.Windows.Forms.TextBox textBox_Random;
+        private System.Windows.Forms.MaskedTextBox TextBox_Best;
+        private System.Windows.Forms.TextBox textBox_gameType;
+        private System.Windows.Forms.TextBox textBox_ruleset;
+        private System.Windows.Forms.TextBox textBox_wordset;
     }
 }

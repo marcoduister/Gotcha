@@ -17,7 +17,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                GameType DeleteGameType = Context.GameTypes.Include(i => i.Games).First(f => f.Id == gameType_id);
+                GameType DeleteGameType = Context.GameTypes.AsNoTracking().Include(i => i.Games).First(f => f.Id == gameType_id);
                 Context.Remove(DeleteGameType);
                 Context.SaveChanges();
 
@@ -33,7 +33,7 @@ namespace Gotcha.BUS
         {
             try
             {
-                List<GameType> List = Context.GameTypes.Include(i => i.User).ToList();
+                List<GameType> List = Context.GameTypes.AsNoTracking().Include(i => i.User).ToList();
 
                 return List;
             }

@@ -245,6 +245,12 @@
     <Compile Include="View\UserControls\GameTypes\GameType_Overview.Designer.cs">
       <DependentUpon>GameType_Overview.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\Game\Game_Read.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControls\Game\Game_Read.Designer.cs">
+      <DependentUpon>Game_Read.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\Game\Game_Edit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\GameTypes\GameType_Overview.resx">
       <DependentUpon>GameType_Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControls\Game\Game_Read.resx">
+      <DependentUpon>Game_Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControls\Game\Game_Edit.resx">
       <DependentUpon>Game_Edit.cs</DependentUpon>
