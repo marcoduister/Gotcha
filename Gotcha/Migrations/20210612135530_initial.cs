@@ -105,6 +105,7 @@ namespace Gotcha.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     Maker_Id = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
@@ -118,7 +119,7 @@ namespace Gotcha.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RuleLinks",
+                name: "RuleRuleSets",
                 columns: table => new
                 {
                     Rule_Id = table.Column<Guid>(nullable: false),
@@ -126,15 +127,15 @@ namespace Gotcha.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RuleLinks", x => new { x.RuleSet_Id, x.Rule_Id });
+                    table.PrimaryKey("PK_RuleRuleSets", x => new { x.RuleSet_Id, x.Rule_Id });
                     table.ForeignKey(
-                        name: "FK_RuleLinks_RuleSets_RuleSet_Id",
+                        name: "FK_RuleRuleSets_RuleSets_RuleSet_Id",
                         column: x => x.RuleSet_Id,
                         principalTable: "RuleSets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RuleLinks_Rules_Rule_Id",
+                        name: "FK_RuleRuleSets_Rules_Rule_Id",
                         column: x => x.Rule_Id,
                         principalTable: "Rules",
                         principalColumn: "Id",
@@ -147,16 +148,16 @@ namespace Gotcha.Migrations
                 {
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
-                    StartTime = table.Column<DateTime>(nullable: false),
-                    EindTime = table.Column<DateTime>(nullable: false),
+                    StartTime = table.Column<DateTime>(nullable: true),
+                    EindTime = table.Column<DateTime>(nullable: true),
                     Location = table.Column<string>(nullable: true),
-                    MaxPlayers = table.Column<int>(nullable: true),
                     RandomWiner = table.Column<Guid>(nullable: true),
                     BestKill = table.Column<Guid>(nullable: true),
+                    Archived = table.Column<bool>(nullable: false),
                     Maker_Id = table.Column<Guid>(nullable: false),
-                    RuleSet_Id = table.Column<Guid>(nullable: true),
+                    WordSet_Id = table.Column<Guid>(nullable: true),
                     GameType_Id = table.Column<Guid>(nullable: true),
-                    WordSet_Id = table.Column<Guid>(nullable: true)
+                    RuleSet_Id = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -188,23 +189,23 @@ namespace Gotcha.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WordLinks",
+                name: "WordWordsets",
                 columns: table => new
                 {
-                    Word_Id = table.Column<Guid>(nullable: false),
-                    WordSet_Id = table.Column<Guid>(nullable: false)
+                    WordSet_Id = table.Column<Guid>(nullable: false),
+                    Word_Id = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WordLinks", x => new { x.WordSet_Id, x.Word_Id });
+                    table.PrimaryKey("PK_WordWordsets", x => new { x.WordSet_Id, x.Word_Id });
                     table.ForeignKey(
-                        name: "FK_WordLinks_WordSets_WordSet_Id",
+                        name: "FK_WordWordsets_WordSets_WordSet_Id",
                         column: x => x.WordSet_Id,
                         principalTable: "WordSets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_WordLinks_Words_Word_Id",
+                        name: "FK_WordWordsets_Words_Word_Id",
                         column: x => x.Word_Id,
                         principalTable: "Words",
                         principalColumn: "Id",
@@ -218,8 +219,8 @@ namespace Gotcha.Migrations
                     Id = table.Column<Guid>(nullable: false),
                     Game_Id = table.Column<Guid>(nullable: false),
                     User_Id = table.Column<Guid>(nullable: false),
-                    Word_Id = table.Column<Guid>(nullable: false),
-                    EliminatedTime = table.Column<DateTime>(nullable: false),
+                    Word_Id = table.Column<Guid>(nullable: true),
+                    EliminatedTime = table.Column<DateTime>(nullable: true),
                     Eliminations = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -231,12 +232,22 @@ namespace Gotcha.Migrations
                         principalTable: "Games",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Contracts_Users_User_Id",
+                        column: x => x.User_Id,
+                        principalTable: "Users",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contracts_Game_Id",
                 table: "Contracts",
                 column: "Game_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contracts_User_Id",
+                table: "Contracts",
+                column: "User_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Games_GameType_Id",
@@ -264,8 +275,8 @@ namespace Gotcha.Migrations
                 column: "Maker_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RuleLinks_Rule_Id",
-                table: "RuleLinks",
+                name: "IX_RuleRuleSets_Rule_Id",
+                table: "RuleRuleSets",
                 column: "Rule_Id");
 
             migrationBuilder.CreateIndex(
@@ -279,11 +290,6 @@ namespace Gotcha.Migrations
                 column: "Maker_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WordLinks_Word_Id",
-                table: "WordLinks",
-                column: "Word_Id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Words_Maker_Id",
                 table: "Words",
                 column: "Maker_Id");
@@ -292,6 +298,11 @@ namespace Gotcha.Migrations
                 name: "IX_WordSets_Maker_Id",
                 table: "WordSets",
                 column: "Maker_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WordWordsets_Word_Id",
+                table: "WordWordsets",
+                column: "Word_Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -300,10 +311,10 @@ namespace Gotcha.Migrations
                 name: "Contracts");
 
             migrationBuilder.DropTable(
-                name: "RuleLinks");
+                name: "RuleRuleSets");
 
             migrationBuilder.DropTable(
-                name: "WordLinks");
+                name: "WordWordsets");
 
             migrationBuilder.DropTable(
                 name: "Games");

@@ -20,7 +20,11 @@ namespace Gotcha.BUS
         }
         public List<User> GetUsers()
         {
-            return Context.Users.AsNoTracking().Where(g => g.Id != new Guid(Properties.Settings.Default.UserId)).ToList();
+            return Context.Users.AsNoTracking().Where(g => g.Id != new Guid(Properties.Settings.Default.UserId) && g.Rol != Enums.Rolen.Admin).ToList();
+        }
+        public Game GetGameBy(Guid Game_Id)
+        {
+            return Context.Games.AsNoTracking().Where(g => g.Id == Game_Id).First();
         }
         public Game GetGameById(Guid Game_Id)
         {
@@ -82,7 +86,6 @@ namespace Gotcha.BUS
             try
             {
                 Game.Contracts = null;
-                Game.Maker_Id = new Guid(Properties.Settings.Default.UserId);
                 Context.Games.Update(Game);
                 Context.SaveChanges();
 

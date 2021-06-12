@@ -151,7 +151,7 @@ namespace Gotcha.View.UserControls.Game
 
         private void Btn_UpdateGame_Click(object sender, EventArgs e)
         {
-            Models.Game CurrentGame =  _GameController.GetGameById(_Game_Id);
+            Models.Game CurrentGame =  _GameController.GetGameBy(_Game_Id);
 
             if (CurrentGame.StartTime != null && (Enums.Rolen)Properties.Settings.Default.UserRol == Enums.Rolen.Gamemaster)
             {

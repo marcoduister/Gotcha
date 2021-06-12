@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gotcha.Migrations
 {
     [DbContext(typeof(Gotcha_DBcontext))]
-    [Migration("20210604215732_addNameToword")]
-    partial class addNameToword
+    [Migration("20210612135530_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,9 +74,6 @@ namespace Gotcha.Migrations
 
                     b.Property<Guid>("Maker_Id")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int?>("MaxPlayers")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
