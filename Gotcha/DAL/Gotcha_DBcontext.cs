@@ -23,7 +23,7 @@ namespace Gotcha.DAL
         public DbSet<WordWordset> WordWordsets { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("server=.;database=Gotcha_DEV1;trusted_connection=true;");
+            => options.UseSqlServer("server=.;database=Gotcha_DEV;trusted_connection=true;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
