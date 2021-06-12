@@ -90,7 +90,6 @@ namespace Gotcha.View.UserControls.Game
                 row.CreateCells(dataGridView_gameUsers);
                 row.Cells[0].Value = contract.User_Id;
                 row.Cells[1].Value = contract.User.FirstName + " " + contract.User.LastName;
-                if (contract.Word_Id != null)
 
                 if (CurrentGame.Contracts.Count(e => e.EliminatedTime == null) >= 2)
                 {
@@ -107,6 +106,7 @@ namespace Gotcha.View.UserControls.Game
                 }
                 else
                 {
+                    if(contract.Word_Id != null)
                     {
                         row.Cells[2].Value = CurrentGame.WordSet.WordWordset.Where(e => e.Word_Id == contract.Word_Id).First().Word.Content;
 
