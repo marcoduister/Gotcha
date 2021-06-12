@@ -90,19 +90,31 @@ namespace Gotcha.View.UserControls.Game
                 row.CreateCells(dataGridView_gameUsers);
                 row.Cells[0].Value = contract.User_Id;
                 row.Cells[1].Value = contract.User.FirstName + " " + contract.User.LastName;
+                if (contract.Word_Id != null)
 
                 if (CurrentGame.Contracts.Count(e => e.EliminatedTime == null) >= 2)
                 {
                     if (contract.EliminatedTime == null && CurrentGame.StartTime != null)
                     {
                         DataGridViewButtonCell btn_Kill = new DataGridViewButtonCell() { Value = "Kill" };
-                        row.Cells[2] = btn_Kill;
+                        row.Cells[3] = btn_Kill;
                     }
                 }
                 if (CurrentGame.StartTime == null)
                 {
                     DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                    row.Cells[3] = btn_Delete;
+                    row.Cells[4] = btn_Delete;
+                }
+                else
+                {
+                    {
+                        row.Cells[2].Value = CurrentGame.WordSet.WordWordset.Where(e => e.Word_Id == contract.Word_Id).First().Word.Content;
+
+                    }
+                }
+                if (contract.EliminatedTime != null)
+                {
+                    row.Cells[3].Value = "killed";
                 }
 
                 dataGridView_gameUsers.Rows.Add(row);

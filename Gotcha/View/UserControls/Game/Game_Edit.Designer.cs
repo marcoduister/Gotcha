@@ -65,6 +65,7 @@ namespace Gotcha.View.UserControls.Game
             this.Btn_archiveGame = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Word = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Kill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_gameUsers)).BeginInit();
@@ -130,6 +131,7 @@ namespace Gotcha.View.UserControls.Game
             this.dataGridView_gameUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.User,
+            this.Word,
             this.btn_Kill,
             this.btn_Delete});
             this.dataGridView_gameUsers.Location = new System.Drawing.Point(473, 43);
@@ -400,6 +402,13 @@ namespace Gotcha.View.UserControls.Game
             this.User.Name = "User";
             this.User.Width = 125;
             // 
+            // Word
+            // 
+            this.Word.HeaderText = "word";
+            this.Word.MinimumWidth = 6;
+            this.Word.Name = "Word";
+            this.Word.Width = 125;
+            // 
             // btn_Kill
             // 
             this.btn_Kill.HeaderText = "Kill";
@@ -500,6 +509,7 @@ namespace Gotcha.View.UserControls.Game
         private System.Windows.Forms.Button Btn_archiveGame;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn User;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Word;
         private System.Windows.Forms.DataGridViewTextBoxColumn btn_Kill;
         private System.Windows.Forms.DataGridViewTextBoxColumn btn_Delete;
     }

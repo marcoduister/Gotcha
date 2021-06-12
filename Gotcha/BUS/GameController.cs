@@ -16,7 +16,7 @@ namespace Gotcha.BUS
 
         public List<Game> GetAllGames()
         {
-            return Context.Games.AsNoTracking().Where(g => g.Maker_Id == new Guid(Properties.Settings.Default.UserId)).Include(e => e.User).ToList();
+            return Context.Games.AsNoTracking().Include(e => e.User).ToList();
         }
         public List<User> GetUsers()
         {
@@ -24,7 +24,9 @@ namespace Gotcha.BUS
         }
         public Game GetGameById(Guid Game_Id)
         {
-            return Context.Games.AsNoTracking().Include(e => e.Contracts).ThenInclude(e => e.User).AsNoTracking().Where(g => g.Id == Game_Id).First();
+            return Context.Games.AsNoTracking().Include(e => e.WordSet).ThenInclude(e => e.WordWordset).ThenInclude(e =>e.Word).AsNoTracking()
+                .Include(e => e.RuleSet).AsNoTracking().Include(e => e.GameType).AsNoTracking()
+                .Include(e => e.Contracts).ThenInclude(e => e.User).AsNoTracking().Where(g => g.Id == Game_Id).First();
         }
 
         internal List<Contract> GetcontractsByGameId(Guid Game_Id)

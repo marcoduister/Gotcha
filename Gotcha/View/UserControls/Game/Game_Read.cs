@@ -28,9 +28,18 @@ namespace Gotcha.View.UserControls.Game
             textBox_Name.Text = CurrentGame.Name;
             textBox_Location.Text = CurrentGame.Location;
             textBoxActivePlayer.Text = CurrentGame.Contracts.Count().ToString();
-            textBox_gameType.Text = CurrentGame.GameType.Name;
-            textBox_ruleset.Text = CurrentGame.RuleSet.Name;
-            textBox_wordset.Text = CurrentGame.WordSet.Name;
+            if (CurrentGame.GameType != null)
+            {
+                textBox_gameType.Text = CurrentGame.GameType.Name;
+            }
+            if (CurrentGame.RuleSet !=null)
+            {
+                textBox_ruleset.Text = CurrentGame.RuleSet.Name;
+            }
+            if (CurrentGame.WordSet !=null)
+            {
+                textBox_wordset.Text = CurrentGame.WordSet.Name;
+            }
             if (CurrentGame.StartTime != null)
             {
                 dateTimePicker_Start.Value = (DateTime)CurrentGame.StartTime;
@@ -90,7 +99,8 @@ namespace Gotcha.View.UserControls.Game
                 row.Cells[1].Value = contract.User.FirstName + " " + contract.User.LastName;
                 if (contract.Word_Id !=null)
                 {
-
+                    row.Cells[2].Value = CurrentGame.WordSet.WordWordset.Where(e => e.Word_Id == contract.Word_Id).First().Word.Content;
+                    
                 }
                 if (contract.EliminatedTime != null)
                 {

@@ -37,8 +37,12 @@ namespace Gotcha.View.UserControls.Users
                     row.Cells[4].Value = User.Birthdate;
                     DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
                     row.Cells[5] = btn_Edit;
-                    DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
-                    row.Cells[6] = btn_Delete;
+                    if (Properties.Settings.Default.UserRol != 2)
+                    {
+                        DataGridViewButtonCell btn_Delete = new DataGridViewButtonCell() { Value = "Delete" };
+                        row.Cells[6] = btn_Delete;
+                    }
+                    
                     //DataGridViewButtonCell btn_Read = new DataGridViewButtonCell() { Value = "Read" };
                     //row.Cells[7] = btn_Read;
 

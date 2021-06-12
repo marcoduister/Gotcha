@@ -26,6 +26,8 @@ namespace Gotcha.View.UserControls.Users
             {
                 UserRol.Visible = false;
                 label6.Visible = false;
+                label_password.Visible = false;
+                textBox_password.Visible = false;
             }
 
             UserRol.DataSource = Enum.GetValues(typeof(Enums.Rolen));
@@ -40,12 +42,13 @@ namespace Gotcha.View.UserControls.Users
             LastName.Text = user.LastName;
             Email.Text = user.Email;
             Birthdate.Value = user.Birthdate;
+            textBox_password.Text = user.Password;
+
             if (user.ProfileImage !=null)
             {
                 pictureBox_profileImage.SizeMode = PictureBoxSizeMode.CenterImage;
                 pictureBox_profileImage.Image = new Bitmap(userController.ByteArrayToImage(user.ProfileImage));
             }
-
             if (user.Rol == Enums.Rolen.Player)
             {
                 UserRol.SelectedIndex = 0;
@@ -63,7 +66,7 @@ namespace Gotcha.View.UserControls.Users
 
         private void Edit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(userController.EditUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, UserRol.SelectedIndex, User_Id));
+            MessageBox.Show(userController.EditUser(FirstName.Text, LastName.Text, Email.Text, Birthdate.Value, UserRol.SelectedIndex, User_Id,textBox_password.Text));
             Btn_Cancel_Click(null, null);
         }
 

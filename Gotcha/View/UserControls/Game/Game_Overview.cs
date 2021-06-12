@@ -22,8 +22,16 @@ namespace Gotcha.View.UserControls.Game
 
         private void Game_Overview_Load(object sender, EventArgs e)
         {
-
-            List<Models.Game> gameList = _GameController.GetAllGames();
+            List<Models.Game> gameList = new List<Models.Game>(); 
+            if ((Enums.Rolen)Properties.Settings.Default.UserRol == Enums.Rolen.Gamemaster)
+            {
+                gameList = _GameController.GetAllGames().Where(g => g.Maker_Id == new Guid(Properties.Settings.Default.UserId)).ToList();
+            }
+            else
+            {
+                gameList = _GameController.GetAllGames().ToList();
+            }
+            
 
             foreach (var Game in gameList)
             {
@@ -80,10 +88,10 @@ namespace Gotcha.View.UserControls.Game
             }
             if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnRead")
             {
-                //this.Controls.Clear();
-                //Game_Edit uc = new Game_Edit(Game_id);
-                //uc.Dock = DockStyle.Fill;
-                //this.Controls.Add(uc);
+                this.Controls.Clear();
+                Game_Read uc = new Game_Read(Game_id);
+                uc.Dock = DockStyle.Fill;
+                this.Controls.Add(uc);
             }
             if (dataGridView_Games.Columns[e.ColumnIndex].Name == "btnedit")
             {

@@ -89,7 +89,7 @@ namespace Gotcha.BUS
             return DBContext.Users.AsNoTracking().Any(e => e.Email == Email);
         }
 
-        public string EditUser(string FirstName, string LastName, string Email, DateTime Birthdate, int UserRol, Guid Id)
+        public string EditUser(string FirstName, string LastName, string Email, DateTime Birthdate, int UserRol, Guid Id,string password)
         {
             User user = GetUser(Id);
 
@@ -97,18 +97,22 @@ namespace Gotcha.BUS
             user.LastName = LastName;
             user.Email = Email;
             user.Birthdate = Birthdate;
+            user.Password = password;
 
             if (UserRol == 0)
             {
                 user.Rol = Enums.Rolen.Player;
+                user.UserActive = false;
             }
             else if (UserRol == 1)
             {
                 user.Rol = Enums.Rolen.Gamemaster;
+                user.UserActive = true;
             }
             else if (UserRol == 2)
             {
                 user.Rol = Enums.Rolen.Admin;
+                user.UserActive = true;
             }
 
             DBContext.Users.Add(user);

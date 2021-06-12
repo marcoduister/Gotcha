@@ -45,6 +45,8 @@ namespace Gotcha.View.UserControls.Users
             this.btn_Upload = new System.Windows.Forms.Button();
             this.pictureBox_profileImage = new System.Windows.Forms.PictureBox();
             this.Btn_Cancel = new System.Windows.Forms.Button();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.label_password = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_profileImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,10 +202,29 @@ namespace Gotcha.View.UserControls.Users
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
             // 
+            // textBox_password
+            // 
+            this.textBox_password.Location = new System.Drawing.Point(177, 326);
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(207, 22);
+            this.textBox_password.TabIndex = 37;
+            // 
+            // label_password
+            // 
+            this.label_password.AutoSize = true;
+            this.label_password.Location = new System.Drawing.Point(59, 329);
+            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_password.Name = "label_password";
+            this.label_password.Size = new System.Drawing.Size(69, 17);
+            this.label_password.TabIndex = 39;
+            this.label_password.Text = "Password";
+            // 
             // User_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_password);
+            this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.Btn_Cancel);
             this.Controls.Add(this.textBox_imagePath);
             this.Controls.Add(this.btn_Upload);
@@ -247,5 +268,7 @@ namespace Gotcha.View.UserControls.Users
         private System.Windows.Forms.Button btn_Upload;
         private System.Windows.Forms.PictureBox pictureBox_profileImage;
         private System.Windows.Forms.Button Btn_Cancel;
+        private System.Windows.Forms.TextBox textBox_password;
+        private System.Windows.Forms.Label label_password;
     }
 }
