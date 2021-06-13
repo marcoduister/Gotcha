@@ -422,7 +422,6 @@
     <EmbeddedResource Include="View\UserControls\Worden\Word_Edit.resx">
       <DependentUpon>Word_Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

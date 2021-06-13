@@ -34,7 +34,7 @@ namespace Gotcha.View.UserControls.Users
                     row.Cells[1].Value = User.FirstName;
                     row.Cells[2].Value = User.LastName;
                     row.Cells[3].Value = User.Email;
-                    row.Cells[4].Value = User.Birthdate;
+                    row.Cells[4].Value = User.UserActive;
                     DataGridViewButtonCell btn_Edit = new DataGridViewButtonCell() { Value = "Edit" };
                     row.Cells[5] = btn_Edit;
                     if (Properties.Settings.Default.UserRol == 2)

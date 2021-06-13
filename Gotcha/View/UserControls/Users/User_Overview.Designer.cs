@@ -36,7 +36,7 @@ namespace Gotcha.View.UserControls.Users
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
@@ -56,7 +56,7 @@ namespace Gotcha.View.UserControls.Users
             // AddUser
             // 
             this.AddUser.Location = new System.Drawing.Point(23, 89);
-            this.AddUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddUser.Margin = new System.Windows.Forms.Padding(4);
             this.AddUser.Name = "AddUser";
             this.AddUser.Size = new System.Drawing.Size(103, 34);
             this.AddUser.TabIndex = 1;
@@ -72,11 +72,11 @@ namespace Gotcha.View.UserControls.Users
             this.FirstName,
             this.LastName,
             this.Email,
-            this.Birthdate,
+            this.Active,
             this.btn_Edit,
             this.btn_Delete});
             this.dataGridView_Users.Location = new System.Drawing.Point(23, 130);
-            this.dataGridView_Users.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_Users.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_Users.Name = "dataGridView_Users";
             this.dataGridView_Users.RowHeadersWidth = 51;
             this.dataGridView_Users.Size = new System.Drawing.Size(859, 394);
@@ -111,12 +111,12 @@ namespace Gotcha.View.UserControls.Users
             this.Email.Name = "Email";
             this.Email.Width = 125;
             // 
-            // Birthdate
+            // Active
             // 
-            this.Birthdate.HeaderText = "Birthdate";
-            this.Birthdate.MinimumWidth = 6;
-            this.Birthdate.Name = "Birthdate";
-            this.Birthdate.Width = 125;
+            this.Active.HeaderText = "Active";
+            this.Active.MinimumWidth = 6;
+            this.Active.Name = "Active";
+            this.Active.Width = 125;
             // 
             // btn_Edit
             // 
@@ -143,7 +143,7 @@ namespace Gotcha.View.UserControls.Users
             this.Controls.Add(this.dataGridView_Users);
             this.Controls.Add(this.AddUser);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "User_Overview";
             this.Size = new System.Drawing.Size(909, 545);
             this.Load += new System.EventHandler(this.User_Overview_Load);
@@ -162,7 +162,7 @@ namespace Gotcha.View.UserControls.Users
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Birthdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Active;
         private System.Windows.Forms.DataGridViewTextBoxColumn btn_Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn btn_Delete;
     }
